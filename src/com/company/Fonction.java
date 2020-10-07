@@ -47,6 +47,7 @@ public class Fonction {
         else if(choix=='3'){
             Main.close();
         }
+        //Si le caractère indiqué n'est pas valide
         else{
             flush(10);
             System.out.println("Veuillez indiquer un caractère valide");
@@ -97,5 +98,7 @@ public class Fonction {
             }
             System.out.println();
         }
+
+
     }
 }

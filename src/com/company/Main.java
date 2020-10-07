@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
     //fonction pour éteindre le jeu
     public static void close(){
@@ -20,5 +22,16 @@ public class Main {
 
         plateau = Fonction.lancerPartie(joueur1, joueur2);
 
+
+
+        System.out.println("Relancer une partie ? [o] [n]");
+        Scanner newGame = new Scanner(System.in);
+        char newgame = newGame.next().charAt(0);
+        if (newgame == 'o'){
+            Fonction.lancerPartie(joueur1, joueur2);
+        }
+        else if(newgame == 'n') {
+            Fonction.menu();
+        }
     }
 }
