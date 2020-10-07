@@ -2,14 +2,21 @@ package com.company;
 
 import java.util.Scanner;
 public class Fonction {
+    public static void flush(int a){
+        for (int i = 0; i < a; i = i + 1) {
+            System.out.println(" ");
+        }
+    }
     public static void menu(){
         System.out.println("Bienvenue dans Block-Breaker :");
-        System.out.println("-Pour lancer le jeu taper 1 \n" + "-Pour afficher les règles taper 2 ");
+        System.out.println("Lancer le jeu [1] \n" + "Règles [2] \n" + "Quitter le jeu [3]");
         Scanner scanner = new Scanner(System.in);
         char choix = scanner.next().charAt(0);
+
         if( choix == '1'){
-            System.out.println("Ecriver le nombres de joueurs participants");
+           // System.out.println("Ecriver le nombres de joueurs participants");
         }
+        // Les règles du jeu :
         else if(choix == '2'){
             System.out.println("Block Breaker est un jeu qui peut se jouer de 2 à 4 joueurs.\n" +
                     "- Pendant son tour un joueur peut déplacer son pion d’une case verticalement ou\n" +
@@ -23,14 +30,21 @@ public class Fonction {
                     "- Chaque joueur déplace horizontalement ou\n" +
                     "verticalement son pion dans la matrice, puis\n" +
                     "sélectionne une case à détruire.");
+            // Retour au menu
             Scanner exit = new Scanner(System.in);
             System.out.println("Retour au menu [o]");
             char Exit = scanner.next().charAt(0);
             if(Exit == 'o') {
-                for (int i = 0; i < 10; i = i + 1) {
-                    System.out.println(" ");
-                }
+                flush(15);
+                menu();
             }
+        }
+        else if(choix==3){
+        }
+        else{
+            flush(10);
+            System.out.println("Veuillez indiquer un caractère valide");
+            flush(2);
             menu();
         }
     }
