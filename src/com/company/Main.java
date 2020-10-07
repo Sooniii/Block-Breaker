@@ -3,7 +3,7 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-
+        Fonction.menu();
         //Déclaration des variables
         String pseudoJoueur1;
         String pseudoJoueur2;
