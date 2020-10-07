@@ -11,14 +11,13 @@ public class Fonction {
 
     public static void menu(){
         //Introduction
-        System.out.println("Bienvenue dans Block-Breaker :");
-        flush(1);
         System.out.print("   - Lancer le jeu [1] \n");
         System.out.print("   - Règles [2]\n ");
         System.out.print("  - Scores [3] \n");
         System.out.print("   - Quitter le jeu [4]\n");
         Scanner scanner = new Scanner(System.in);
         char choix = scanner.next().charAt(0);
+
         //Lancer le jeu
         if( choix == '1'){
            // System.out.println("Ecriver le nombres de joueurs participants");
@@ -55,8 +54,12 @@ public class Fonction {
                 menu();
             }
         }
+
+
+
+
         //Quitter le jeu
-        else if(choix=='3'){
+        else if(choix=='4'){
             Main.close();
         }
         //Si le caractère indiqué n'est pas valide
