@@ -42,21 +42,33 @@ public class Main {
             System.out.println("Le joueur 2 choisi son pseudo (bleu) : ");
             joueur2 = Fonction.choisirPseudo();
 
+            if (joueur2.equals(joueur1)) {
+                System.out.println("Les deux joueurs ne peuvent pas avoir le même pseudo");
+                menu.menu();
+            }
+
             plateau = Fonction.lancerPartie(joueur1, joueur2);
 
             short joueur1Ligne = 5;
             short joueur1Colonne = 6;
             short joueur2Ligne = 6;
             short joueur2Colonne = 6;
-            boolean signalVictoire = false;
+            boolean signalVictoire = true;
+            boolean choixJoueur = true;
+            boolean valideDeplacement;
+            Scanner sc = new Scanner(System.in);
 
             //plateau[redColonne][redLigne] = "[]";
 
             premierJoueur = rd.nextInt(1);
             //if (premierJoueur == 0)
 
-            while (signalVictoire) {
-
+            while (signalVictoire){
+                String bouton = sc.next();
+                if (bouton.equals("z")) {
+                    Fonction.bougeHaut(plateau,joueur1Ligne,joueur1Colonne,joueur1);
+                    joueur1Ligne -=1;
+                }
             }
             startnew();
         }

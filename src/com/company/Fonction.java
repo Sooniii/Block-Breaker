@@ -57,11 +57,30 @@ public class Fonction {
             }
             System.out.println();
         }
-
-
     }
 
-    public static void move(short playerX, short playerY) {
-        Scanner sc = new Scanner(System.in);
+    public static boolean valideDeplacement(String entreeUtilisateur) {
+        boolean flagValideDeplacement = false;
+        if ((entreeUtilisateur.equals("z")) || (entreeUtilisateur.equals("s")) || (entreeUtilisateur.equals("q")) || (entreeUtilisateur.equals("d"))) {
+            flagValideDeplacement=true;
+        }
+        return flagValideDeplacement;
+    }
+    public static void bougeGauche(short playerX, short playerY) {
+
+    }
+    public static void bougeDroite(short playerX, short playerY) {
+
+    }
+    public static void bougeHaut(String[][] plateau, int x, int y, String player) {
+        plateau[x][y] = "[]";
+        x -= 1;
+        player = player.substring(0,1);
+        plateau[x][y] = player;
+        plateau[x][y] = (ANSI_RED + player + ANSI_RESET);
+        afficherPlateau(plateau);
+    }
+    public static void bougeBas(short playerX, short playerY) {
+
     }
 }
