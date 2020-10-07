@@ -25,14 +25,14 @@ public class menu {
         System.out.print("  - Scores [3] \n");
         System.out.print("   - Quitter le jeu [4]\n");
         Scanner scanner = new Scanner(System.in);
-        char choix = scanner.next().charAt(0);
+        String choix = scanner.next();
 
         //Lancer le jeu
-        if( choix == '1'){
+        if( choix.equals("1")){
             // System.out.println("Ecriver le nombres de joueurs participants");
         }
         // Les règles du jeu :
-        else if(choix == '2'){
+        else if(choix.equals("2")){
             System.out.println("####################################################################");
             System.out.println("Block Breaker est un jeu qui peut se jouer de 2 à 4 joueurs.\n");
             System.out.print("- Pendant son tour un joueur peut déplacer son pion d’une case verticalement ou\n");
@@ -63,8 +63,12 @@ public class menu {
 
 
         //Quitter le jeu
-        else if(choix=='4'){
+        else if(choix.equals("4")){
             Main.close();
+        }
+        else if(choix.equals("easterEgg")){
+            System.out.println("chuuuut c'est un secret");
+            menu();
         }
         //Si le caractère indiqué n'est pas valide
         else{
