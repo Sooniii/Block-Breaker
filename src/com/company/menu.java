@@ -3,6 +3,20 @@ package com.company;
 import java.util.Scanner;
 
 public class menu {
+    //Retour au menu ?
+    public static void returntomenu(){
+        Scanner exit = new Scanner(System.in);
+        System.out.println("\n Retour au menu [o]");
+        String Exit = exit.next();
+        if(Exit.equals("o")) {
+            Fonction.flush(15);
+            menu();
+        }
+        else{
+            System.out.println("ERREUR");
+            returntomenu();
+        }
+    }
     public static void menu(){
         //Introduction
         Fonction.flush(1);
@@ -19,6 +33,7 @@ public class menu {
         }
         // Les règles du jeu :
         else if(choix == '2'){
+            System.out.println("####################################################################");
             System.out.println("Block Breaker est un jeu qui peut se jouer de 2 à 4 joueurs.\n");
             System.out.print("- Pendant son tour un joueur peut déplacer son pion d’une case verticalement ou\n");
             System.out.print("horizontalement\n");
@@ -40,14 +55,8 @@ public class menu {
             System.out.print("- Chaque joueur déplace horizontalement ou\n");
             System.out.print("verticalement son pion dans la matrice, puis\n");
             System.out.print("sélectionne une case à détruire.\n");
-            // Retour au menu
-            Scanner exit = new Scanner(System.in);
-            System.out.println("Retour au menu [o]");
-            char Exit = scanner.next().charAt(0);
-            if(Exit == 'o') {
-                Fonction.flush(15);
-                menu();
-            }
+            // Retour au menu ?
+            returntomenu();
         }
 
 
