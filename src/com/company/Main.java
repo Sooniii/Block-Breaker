@@ -37,9 +37,9 @@ public class Main {
             Random rd = new Random();
             int premierJoueur;
 
-            System.out.println("Le joueur 1 choisi son pseudo : ");
+            System.out.println("Le joueur 1 choisi son pseudo (rouge): ");
             joueur1 = Fonction.choisirPseudo();
-            System.out.println("Le joueur 2 choisi son pseudo : ");
+            System.out.println("Le joueur 2 choisi son pseudo (bleu) : ");
             joueur2 = Fonction.choisirPseudo();
 
             plateau = Fonction.lancerPartie(joueur1, joueur2);
