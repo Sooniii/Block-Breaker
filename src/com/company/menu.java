@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class menu {
     public static void menu(){
         //Introduction
-        Fonction.flush(3);
+        Fonction.flush(1);
         System.out.print("   - Lancer le jeu [1] \n");
         System.out.print("   - Règles [2]\n ");
         System.out.print("  - Scores [3] \n");

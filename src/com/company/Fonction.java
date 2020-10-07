@@ -22,6 +22,10 @@ public class Fonction {
             String pseudo = sc.next();                                  //Le joueur tape son pseudo
             return pseudo;                                              //Renvoie le pseudo du joueur
     }
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_BLUE = "\u001B[34m";
 
     //Fonction pour lancer la partie
     public static String[][] lancerPartie(String joueur1, String joueur2) {
@@ -35,8 +39,8 @@ public class Fonction {
                 plateau[i][j] = "[]";                                   //Creer les cases
                 if (i == 0) { plateau[i][j] = Integer.toString(j);}     //Place les index des cases horizontaux
                 if (j == 0) { plateau[i][j] = Integer.toString(i);}     //Place les index des cases verticales
-                if (i == 5 && j == 6) { plateau[i][j] = joueur1;}       //Place le joueur 1
-                if (i == 6 && j == 6) { plateau[i][j] = joueur2;}       //Place le joueur 2
+                if (i == 5 && j == 6) { plateau[i][j] = (ANSI_RED + joueur1 + ANSI_RESET);}       //Place le joueur 1
+                if (i == 6 && j == 6) { plateau[i][j] = (ANSI_BLUE + joueur2 + ANSI_RESET);}       //Place le joueur 2
                 System.out.print(plateau[i][j] + "\t");                 //Affiche le tableau
             }
             System.out.println();                                       //Saute une ligne
