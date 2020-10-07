@@ -3,8 +3,8 @@ package com.company;
 import java.util.Scanner;
 
 public class menu {
-    //Retour au menu ?
-    public static void returntomenu(){
+    //Fonction retour au menu
+    public static void returntomenu() throws InterruptedException {
         Scanner exit = new Scanner(System.in);
         System.out.println("\n Retour au menu [o]");
         String Exit = exit.next();
@@ -17,7 +17,7 @@ public class menu {
             returntomenu();
         }
     }
-    public static void menu(){
+    public static void menu() throws InterruptedException {
         //Introduction
         Fonction.flush(1);
         System.out.print("   - Lancer le jeu [1] \n");
@@ -59,17 +59,24 @@ public class menu {
             returntomenu();
         }
 
-
-
-
         //Quitter le jeu
         else if(choix.equals("4")){
+            Fonction.flush(20);
+            System.out.println("Merci d'avoir jouer");
+            for(int i = 0; i < 3; i=i+1){
+                Thread.sleep(300);
+                System.out.println("<3");
+            }
+            Thread.sleep(500);
             Main.close();
         }
+
+        //Easter egg
         else if(choix.equals("easterEgg")){
             System.out.println("chuuuut c'est un secret");
             menu();
         }
+
         //Si le caractère indiqué n'est pas valide
         else{
             Fonction.flush(10);

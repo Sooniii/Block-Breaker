@@ -11,7 +11,7 @@ public class Main {
         System.exit(0);
     }
     //Fonction pour relancer une partie
-    public static void startnew(){
+    public static void startnew() throws InterruptedException {
         System.out.println("Relancer une partie ? [o] [n]");
         Scanner newGame = new Scanner(System.in);
         String newgame = newGame.next();
@@ -26,7 +26,7 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.out.println("Bienvenue dans Block-Breaker :");
         menu.menu();
         boolean play = true;
