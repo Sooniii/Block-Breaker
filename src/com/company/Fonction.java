@@ -78,6 +78,7 @@ public class Fonction {
 
     //Fonction pour choisir les pseudo
     public static String choisirPseudo() {
+
             Scanner sc = new Scanner(System.in);                        //Appelle l'objet Scanner
             String pseudo = sc.next();                                  //Le joueur tape son pseudo
             return pseudo;                                              //Renvoie le pseudo du joueur
@@ -85,9 +86,11 @@ public class Fonction {
 
     //Fonction pour lancer la partie
     public static String[][] lancerPartie(String joueur1, String joueur2) {
+
         String[][] plateau = new String[11][12];                        // Creation du plateau
         joueur1 = joueur1.substring(0,1);                               //Prends la premiere lettre du pseudo du J1
         joueur2 = joueur2.substring(0,1);                               //Prends la premiere lettre du pseudo du J2
+
         for (int i = 0; i < plateau.length; i++) {                      //Parcours le tableau à l'horizontal
             for (int j = 0; j < plateau[0].length; j++) {               //Parcours le tableau à la vertical
                 plateau[i][j] = "[]";                                   //Creer les cases
@@ -104,9 +107,7 @@ public class Fonction {
 
     //Fonction qui affiche le plateau
     public static void afficherPlateau(String[][] plateau) {
-        for (int k = 0; k < 3; k++) {                                   //Boucle pour sauter des lignes
-            System.out.println();
-        }
+        flush(3);
         for (int i = 0; i < plateau.length; i++) {                      //Boucle pour afficher le plateau
             for (int j = 0; j < plateau[0].length; j++) {
                 System.out.print(plateau[i][j] + "\t");
@@ -115,5 +116,9 @@ public class Fonction {
         }
 
 
+    }
+
+    public static void move(short playerX, short playerY) {
+        Scanner sc = new Scanner(System.in);
     }
 }
