@@ -11,6 +11,7 @@ public class Fonction {
 
     public static void menu(){
         //Introduction
+        flush(3);
         System.out.print("   - Lancer le jeu [1] \n");
         System.out.print("   - Règles [2]\n ");
         System.out.print("  - Scores [3] \n");
@@ -31,7 +32,7 @@ public class Fonction {
             System.out.print("- Si le joueur ne peut plus bouger, il a perdu\n \n");
             System.out.print( "Contraintes :\n");
             System.out.print( "- Un joueur ne peut pas détruire une case occupée.\n");
-            System.out.print("- Un joueur ne peut pas occuper une case détruite ou une case déjà occupée.\n \n \n \n");
+            System.out.print("- Un joueur ne peut pas occuper une case détruite ou une case déjà occupée. \n \n");
             System.out.print("GUIDE :\n");
             System.out.print("\n Menu :\n");
             System.out.print("- Lancer le jeu : Permet de démarrer une partie\n");

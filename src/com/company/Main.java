@@ -48,6 +48,15 @@ public class Main {
             if (newgame == 'n'){
                 Fonction.menu();
             }
+            if (newgame == 'o'){
+
+            }
+            else{
+                Fonction.flush(2);
+                System.out.println("Veuillez indiquer un caractère valide");
+                Fonction.flush(15);
+
+            }
         }
     }
 }
