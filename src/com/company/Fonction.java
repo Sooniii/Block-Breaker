@@ -2,7 +2,8 @@ package com.company;
 
 import java.util.Scanner;
 public class Fonction {
-    public static void menu(){
+    public static void menu() throws InterruptedException {
+        System.out.println("MENU");
         Scanner scanner = new Scanner(System.in);
         char choix = scanner.next().charAt(0);
         if(choix == '3'){
@@ -18,7 +19,15 @@ public class Fonction {
                     "- Chaque joueur déplace horizontalement ou\n" +
                     "verticalement son pion dans la matrice, puis\n" +
                     "sélectionne une case à détruire.");
-            Thread.sleep(500);
+            Scanner exit = new Scanner(System.in);
+            System.out.println("Retour au menu ?");
+            char Exit = scanner.next().charAt(0);
+            if(Exit == 'o') {
+                for (int i = 0; i < 10; i = i + 1) {
+                    System.out.println(" ");
+                }
+            }
+            menu();
         }
     }
 
