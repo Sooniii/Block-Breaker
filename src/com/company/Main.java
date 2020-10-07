@@ -1,6 +1,10 @@
 package com.company;
 
 public class Main {
+    //fonction pour éteindre le jeu
+    public static void close(){
+        System.exit(0);
+    }
 
     public static void main(String[] args) throws InterruptedException {
         Fonction.menu();

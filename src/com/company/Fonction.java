@@ -8,11 +8,13 @@ public class Fonction {
         }
     }
     public static void menu(){
+        //Introduction
         System.out.println("Bienvenue dans Block-Breaker :");
+        flush(1);
         System.out.println("Lancer le jeu [1] \n" + "Règles [2] \n" + "Quitter le jeu [3]");
         Scanner scanner = new Scanner(System.in);
         char choix = scanner.next().charAt(0);
-
+        //Lancer le jeu
         if( choix == '1'){
            // System.out.println("Ecriver le nombres de joueurs participants");
         }
@@ -39,7 +41,9 @@ public class Fonction {
                 menu();
             }
         }
-        else if(choix==3){
+        //Quitter le jeu
+        else if(choix=='3'){
+            Main.close();
         }
         else{
             flush(10);
