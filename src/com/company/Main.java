@@ -4,10 +4,26 @@ import java.util.Random;
 
 import java.util.Scanner;
 
+
 public class Main {
     //fonction pour éteindre le jeu
     public static void close(){
         System.exit(0);
+    }
+    //Fonction pour relancer une partie
+    public static void startnew(){
+        System.out.println("Relancer une partie ? [o] [n]");
+        Scanner newGame = new Scanner(System.in);
+        String newgame = newGame.next();
+        if (newgame.equals("n")){            //si non
+            Fonction.menu();
+        }
+        if (newgame.equals("o")){            //si oui
+
+        }
+        else{                           //si autre
+            startnew();
+        }
     }
 
     public static void main(String[] args) {
@@ -42,21 +58,7 @@ public class Main {
             while (signalVictoire) {
 
             }
-            System.out.println("Relancer une partie ? [o] [n]");
-            Scanner newGame = new Scanner(System.in);
-            char newgame = newGame.next().charAt(0);
-            if (newgame == 'n'){
-                Fonction.menu();
-            }
-            if (newgame == 'o'){
-
-            }
-            else{
-                Fonction.flush(2);
-                System.out.println("Veuillez indiquer un caractère valide");
-                Fonction.flush(15);
-
-            }
+            startnew();
         }
     }
 }
