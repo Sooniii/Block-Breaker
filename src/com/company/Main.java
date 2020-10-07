@@ -16,7 +16,7 @@ public class Main {
         Scanner newGame = new Scanner(System.in);
         String newgame = newGame.next();
         if (newgame.equals("n")){            //si non
-            Fonction.menu();
+            menu.menu();
         }
         if (newgame.equals("o")){            //si oui
 
@@ -28,7 +28,7 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Bienvenue dans Block-Breaker :");
-        Fonction.menu();
+        menu.menu();
         boolean play = true;
         while (play) {
             String joueur1;
