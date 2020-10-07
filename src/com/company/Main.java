@@ -7,7 +7,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-
+        Fonction.menu();
         //Déclaration des variables
         String joueur1;
         String joueur2;
