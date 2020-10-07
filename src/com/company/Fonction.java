@@ -3,10 +3,14 @@ package com.company;
 import java.util.Scanner;
 public class Fonction {
     public static void menu() throws InterruptedException {
-        System.out.println("MENU");
+        System.out.println("Bienvenue dans Block-Breaker :");
+        System.out.println("-Pour lancer le jeu taper 1 \n" + "-Pour afficher les règles taper 2 ");
         Scanner scanner = new Scanner(System.in);
         char choix = scanner.next().charAt(0);
-        if(choix == '3'){
+        if( choix == '1'){
+            System.out.println("Ecriver le nombres de joueurs participants");
+        }
+        else if(choix == '2'){
             System.out.println("Block Breaker est un jeu qui peut se jouer de 2 à 4 joueurs.\n" +
                     "- Pendant son tour un joueur peut déplacer son pion d’une case verticalement ou\n" +
                     "horizontalement\n" + "- Après s'être déplacé, le joueur détruit une case du plateau.\n" + "- Si le joueur ne peut plus bouger, il a perdu\n" + "\n"
@@ -20,7 +24,7 @@ public class Fonction {
                     "verticalement son pion dans la matrice, puis\n" +
                     "sélectionne une case à détruire.");
             Scanner exit = new Scanner(System.in);
-            System.out.println("Retour au menu ?");
+            System.out.println("Retour au menu ? taper o");
             char Exit = scanner.next().charAt(0);
             if(Exit == 'o') {
                 for (int i = 0; i < 10; i = i + 1) {
