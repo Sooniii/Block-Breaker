@@ -2,11 +2,13 @@ package com.company;
 
 import java.util.Scanner;
 public class Fonction {
+    //Fonction pour sauter de ligne
     public static void flush(int a){
         for (int i = 0; i < a; i = i + 1) {
             System.out.println(" ");
         }
     }
+
     public static void menu(){
         //Introduction
         System.out.println("Bienvenue dans Block-Breaker :");
