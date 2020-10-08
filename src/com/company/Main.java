@@ -159,6 +159,7 @@ public class Main {
                         else if (player4Alive) {vainqueur = joueur4;}
                         System.out.println("La partie est finie ! Victoire de " + vainqueur);
                         Fonction.flush(1);
+                        startnew();
                     } //Premier joueur a jouer
                     if (player1Alive && plateau[joueur1Ligne][joueur1Colonne+1] != "[]" && plateau[joueur1Ligne][joueur1Colonne-1]!= "[]"
                             && plateau[joueur1Ligne+1][joueur1Colonne]!= "[]" && plateau[joueur1Ligne-1][joueur1Colonne]!= "[]"){
