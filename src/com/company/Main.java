@@ -191,7 +191,13 @@ public class Main {
                         System.out.println("Quelle case détruire (Ordonnée)");
                         Scanner tourY = new Scanner(System.in);
                         int caseToDestructY = tourY.nextInt();
-                        plateau[caseToDestructY][caseToDestructX] = "X";
+                        if ((plateau[joueur1Ligne][joueur1Colonne] != plateau[caseToDestructY][caseToDestructX])
+                                && (plateau[joueur2Ligne][joueur2Colonne] != plateau[caseToDestructY][caseToDestructX])
+                                && (plateau[joueur3Ligne][joueur3Colonne] != plateau[caseToDestructY][caseToDestructX])
+                                && (plateau[joueur4Ligne][joueur4Colonne] != plateau[caseToDestructY][caseToDestructX])
+                                && ("X" != plateau[caseToDestructY][caseToDestructX])) {
+                            plateau[caseToDestructY][caseToDestructX] = "X";
+                        }
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
                     } else if (tourJoueur % nombreJoueur == 2){
@@ -220,7 +226,13 @@ public class Main {
                         System.out.println("Quelle case détruire (Ordonnée)");
                         Scanner tourY = new Scanner(System.in);
                         int caseToDestructY = tourY.nextInt();
-                        plateau[caseToDestructY][caseToDestructX] = "X";
+                        if ((plateau[joueur1Ligne][joueur1Colonne] != plateau[caseToDestructY][caseToDestructX])
+                                && (plateau[joueur2Ligne][joueur2Colonne] != plateau[caseToDestructY][caseToDestructX])
+                                && (plateau[joueur3Ligne][joueur3Colonne] != plateau[caseToDestructY][caseToDestructX])
+                                && (plateau[joueur4Ligne][joueur4Colonne] != plateau[caseToDestructY][caseToDestructX])
+                                && ("X" != plateau[caseToDestructY][caseToDestructX])) {
+                            plateau[caseToDestructY][caseToDestructX] = "X";
+                        }
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
                     } else if (tourJoueur % nombreJoueur == 3){
@@ -249,7 +261,13 @@ public class Main {
                         System.out.println("Quelle case détruire (Ordonnée)");
                         Scanner tourY = new Scanner(System.in);
                         int caseToDestructY = tourY.nextInt();
-                        plateau[caseToDestructY][caseToDestructX] = "X";
+                        if ((plateau[joueur1Ligne][joueur1Colonne] != plateau[caseToDestructY][caseToDestructX])
+                                && (plateau[joueur2Ligne][joueur2Colonne] != plateau[caseToDestructY][caseToDestructX])
+                                && (plateau[joueur3Ligne][joueur3Colonne] != plateau[caseToDestructY][caseToDestructX])
+                                && (plateau[joueur4Ligne][joueur4Colonne] != plateau[caseToDestructY][caseToDestructX])
+                                && ("X" != plateau[caseToDestructY][caseToDestructX])) {
+                            plateau[caseToDestructY][caseToDestructX] = "X";
+                        }
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
                     }
