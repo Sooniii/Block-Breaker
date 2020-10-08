@@ -67,7 +67,8 @@ public class Main {
             String[][] plateau;
             Random rd = new Random();
             Scanner sc = new Scanner(System.in);
-            int nombreJoueur;
+            int nombreJoueur = 0;
+            String nombreJoueurString;
             int tourJoueur;
             boolean signalVictoire = true;
             int playerAlive;
@@ -75,8 +76,12 @@ public class Main {
             String vainqueur = "null";
 
             //Choix du nombre de joueur
-            System.out.print("Combien de joueurs ? Entre 2 et 4 joueurs : ");
-            nombreJoueur = sc.nextInt();
+            System.out.print("Combien de joueurs ? Entre 2 et 4 : ");
+            nombreJoueurString = sc.next();
+            boolean nombreJoueurboolean = Fonction.isNumber(nombreJoueurString);
+            if(nombreJoueurboolean){
+                nombreJoueur = Integer.parseInt(nombreJoueurString);
+            }
             playerAlive = nombreJoueur;
 
             //Recuperation des coordonnées de départ en fonction du nombre de joueur
@@ -183,9 +188,9 @@ public class Main {
                         Fonction.afficherPlateau(plateau);
                         //Détruire une case
                         Scanner tourX = new Scanner(System.in);
-                        System.out.println("Quelle case détruire (Abscisse)");
+                        System.out.println("Quelle case détruire (Horizontal)");
                         String caseToDestructXstring = tourX.next();
-                        System.out.println("Quelle case détruire (Ordonnée)");
+                        System.out.println("Quelle case détruire (Vertical)");
                         Scanner tourY = new Scanner(System.in);
                         String caseToDestructYstring = tourY.next();
                         boolean numberX = Fonction.isNumber(caseToDestructXstring);
