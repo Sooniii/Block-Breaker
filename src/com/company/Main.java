@@ -172,6 +172,7 @@ public class Main {
                         Fonction.flush(1);
                         startnew();
                     } //Premier joueur a jouer
+                    if (!(player1Alive)) {tourJoueur += 1;}
                     if (player1Alive && plateau[joueur1Ligne][joueur1Colonne+1] != "[]" && plateau[joueur1Ligne][joueur1Colonne-1]!= "[]"
                             && plateau[joueur1Ligne+1][joueur1Colonne]!= "[]" && plateau[joueur1Ligne-1][joueur1Colonne]!= "[]"){
                         System.out.println(joueur1 + " est éliminé");
@@ -179,7 +180,6 @@ public class Main {
                         playerAlive -= 1;
                         tourJoueur += 1;
                     }
-                    if (!(player1Alive)) {tourJoueur += 1;}
                     if (tourJoueur % nombreJoueur == 0 && player1Alive) {
                         System.out.print("C'est à " + joueur1 + " (" + couleur1 + ") de jouer, utilise z,q,s,d pour te déplacer (si tu te trompe de touche ou que tu choisi une direction impossible ca passe ton tour !) : ");
                         bouton = sc.next();
@@ -224,6 +224,7 @@ public class Main {
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
                     }
+                    if (!(player2Alive)) {tourJoueur += 1;}
                     if (player2Alive && plateau[joueur2Ligne][joueur2Colonne+1] != "[]" && plateau[joueur2Ligne][joueur2Colonne-1]!= "[]"
                             && plateau[joueur2Ligne+1][joueur2Colonne]!= "[]" && plateau[joueur2Ligne-1][joueur2Colonne]!= "[]"){
                         System.out.println(joueur2 + " est éliminé");
@@ -231,7 +232,6 @@ public class Main {
                         playerAlive -= 1;
                         tourJoueur += 1;
                     }
-                    if (!(player2Alive)) {tourJoueur += 1;}
                     if (tourJoueur % nombreJoueur == 1 && player2Alive){ //Deuxieme joueur a jouer
                         System.out.print("C'est à " + joueur2 +  " (" + couleur2 + ") de jouer, utilise z,q,s,d pour te déplacer (si tu te trompe de touche ou que tu choisi une direction impossible ca passe ton tour !) : ");
                         bouton = sc.next();
@@ -274,6 +274,7 @@ public class Main {
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
                     }
+                    if (!(player3Alive)) {tourJoueur += 1;}
                     if (player3Alive && (nombreJoueur >= 3) && plateau[joueur3Ligne][joueur3Colonne+1] != "[]" && plateau[joueur3Ligne][joueur3Colonne-1]!= "[]"
                             && plateau[joueur3Ligne+1][joueur3Colonne]!= "[]" && plateau[joueur3Ligne-1][joueur3Colonne]!= "[]"){
                         System.out.println(joueur3 + " est éliminé");
@@ -281,7 +282,6 @@ public class Main {
                         playerAlive -= 1;
                         tourJoueur += 1;
                     }
-                    if (!(player3Alive)) {tourJoueur += 1;}
                     if (tourJoueur % nombreJoueur == 2 && player3Alive){ //Troisieme joueur a jouer
                         System.out.print("C'est à " + joueur3 +  " (" + couleur3 + ") de jouer, utilise z,q,s,d pour te déplacer (si tu te trompe de touche ou que tu choisi une direction impossible ca passe ton tour !) : ");
                         bouton = sc.next();
@@ -324,6 +324,7 @@ public class Main {
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
                     }
+                    if (!(player4Alive)) {tourJoueur += 1;}
                     if (player4Alive && (nombreJoueur == 4) &&plateau[joueur4Ligne][joueur4Colonne+1] != "[]" && plateau[joueur4Ligne][joueur4Colonne-1]!= "[]"
                             && plateau[joueur4Ligne+1][joueur4Colonne]!= "[]" && plateau[joueur4Ligne-1][joueur4Colonne]!= "[]"){
                         System.out.println(joueur4 + " est éliminé");
@@ -331,7 +332,6 @@ public class Main {
                         playerAlive -= 1;
                         tourJoueur += 1;
                     }
-                    if (!(player4Alive)) {tourJoueur += 1;}
                     if (tourJoueur % nombreJoueur == 3 && player4Alive){ //Quatrieme joueur a jouer
                         System.out.print("C'est à " + joueur4 +  " (" + couleur4 + ") de jouer, utilise z,q,s,d pour te déplacer (si tu te trompe de touche ou que tu choisi une direction impossible ca passe ton tour !) : ");
                         bouton = sc.next();

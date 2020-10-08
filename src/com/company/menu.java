@@ -100,7 +100,7 @@ public class menu {
             menu();
         }
 
-        else if(choix.equals("easterEggW")){
+        else if(choix.equals("ViveWejdene")){
             System.out.println("\n" +
                     "$$\\    $$\\ $$\\                            $$\\      $$\\                           $$\\                               \n" +
                     "$$ |   $$ |\\__|                           $$ | $\\  $$ |                          $$ |                              \n" +
