@@ -23,7 +23,8 @@ public class Fonction {
             return pseudo;                                              //Renvoie le pseudo du joueur
     }
     public static final String ANSI_RESET = "\u001B[0m";                // Initialisation des couleurs
-    public static final String ANSI_BLACK = "\u001B[30m";               // Initialisation de la couleur noir
+    public static final String ANSI_PURPLE = "\u001B[35m";              // Initialisation de la couleur violette
+    public static final String ANSI_YELLOW = "\u001B[33m";              // Initialisation de la couleur jaune
     public static final String ANSI_RED = "\u001B[31m";                 // Initialisation de la couleur rouge
     public static final String ANSI_BLUE = "\u001B[34m";                // Initialisation de la couleur bleu
 
@@ -61,7 +62,7 @@ public class Fonction {
                 if (j == 0) { plateau[i][j] = Integer.toString(i);}     //Place les index des cases verticales
                 if (i == 5 && j == 6) { plateau[i][j] = (ANSI_RED + joueur1 + ANSI_RESET);}       //Place le joueur 1 et ajoute la couleur rouge
                 if (i == 6 && j == 5) { plateau[i][j] = (ANSI_BLUE + joueur2 + ANSI_RESET);}      //Place le joueur 2 et ajoute la couleur bleu
-                if (i == 6 && j == 7) { plateau[i][j] = (ANSI_BLACK + joueur3 + ANSI_RESET);}
+                if (i == 6 && j == 7) { plateau[i][j] = (ANSI_PURPLE + joueur3 + ANSI_RESET);}
                 System.out.print(plateau[i][j] + "\t");                 //Affiche le tableau
             }
             System.out.println();                                       //Saute une ligne
@@ -83,8 +84,8 @@ public class Fonction {
                 if (j == 0) { plateau[i][j] = Integer.toString(i);}     //Place les index des cases verticales
                 if (i == 5 && j == 6) { plateau[i][j] = (ANSI_RED + joueur1 + ANSI_RESET);}       //Place le joueur 1 et ajoute la couleur rouge
                 if (i == 6 && j == 5) { plateau[i][j] = (ANSI_BLUE + joueur2 + ANSI_RESET);}      //Place le joueur 2 et ajoute la couleur bleu
-                if (i == 6 && j == 7) { plateau[i][j] = (ANSI_BLACK + joueur3 + ANSI_RESET);}      //Place le joueur 2 et ajoute la couleur bleu
-                if (i == 7 && j == 6) { plateau[i][j] = (ANSI_RED + joueur4 + ANSI_RESET);}      //Place le joueur 2 et ajoute la couleur bleu
+                if (i == 6 && j == 7) { plateau[i][j] = (ANSI_PURPLE + joueur3 + ANSI_RESET);}      //Place le joueur 2 et ajoute la couleur bleu
+                if (i == 7 && j == 6) { plateau[i][j] = (ANSI_YELLOW + joueur4 + ANSI_RESET);}      //Place le joueur 2 et ajoute la couleur bleu
                 System.out.print(plateau[i][j] + "\t");                 //Affiche le tableau
             }
             System.out.println();                                       //Saute une ligne
@@ -109,7 +110,9 @@ public class Fonction {
         player = player.substring(0,1);
         if (color == 1) {plateau[x][y] = (ANSI_RED + player + ANSI_RESET);}
         if (color == 2) {plateau[x][y] = (ANSI_BLUE + player + ANSI_RESET);}
-        if (color == 3) {plateau[x][y] = (ANSI_BLACK + player + ANSI_RESET);}
+        if (color == 3) {plateau[x][y] = (ANSI_PURPLE + player + ANSI_RESET);}
+        if (color == 4) {plateau[x][y] = (ANSI_YELLOW + player + ANSI_RESET);}
+
     }
     public static void bougeDroite(String[][] plateau, int x, int y, String player, int color) {
         plateau[x][y] = "[]";
@@ -117,7 +120,9 @@ public class Fonction {
         player = player.substring(0,1);
         if (color == 1) {plateau[x][y] = (ANSI_RED + player + ANSI_RESET);}
         if (color == 2) {plateau[x][y] = (ANSI_BLUE + player + ANSI_RESET);}
-        if (color == 3) {plateau[x][y] = (ANSI_BLACK + player + ANSI_RESET);}
+        if (color == 3) {plateau[x][y] = (ANSI_PURPLE + player + ANSI_RESET);}
+        if (color == 4) {plateau[x][y] = (ANSI_YELLOW + player + ANSI_RESET);}
+
     }
     public static void bougeHaut(String[][] plateau, int x, int y, String player, int color) {
         plateau[x][y] = "[]";
@@ -125,7 +130,9 @@ public class Fonction {
         player = player.substring(0,1);
         if (color == 1) {plateau[x][y] = (ANSI_RED + player + ANSI_RESET);}
         if (color == 2) {plateau[x][y] = (ANSI_BLUE + player + ANSI_RESET);}
-        if (color == 3) {plateau[x][y] = (ANSI_BLACK + player + ANSI_RESET);}
+        if (color == 3) {plateau[x][y] = (ANSI_PURPLE + player + ANSI_RESET);}
+        if (color == 4) {plateau[x][y] = (ANSI_YELLOW + player + ANSI_RESET);}
+
     }
     public static void bougeBas(String[][] plateau, int x, int y, String player, int color) {
         plateau[x][y] = "[]";
@@ -133,6 +140,8 @@ public class Fonction {
         player = player.substring(0,1);
         if (color == 1) {plateau[x][y] = (ANSI_RED + player + ANSI_RESET);}
         if (color == 2) {plateau[x][y] = (ANSI_BLUE + player + ANSI_RESET);}
-        if (color == 3) {plateau[x][y] = (ANSI_BLACK + player + ANSI_RESET);}
+        if (color == 3) {plateau[x][y] = (ANSI_PURPLE + player + ANSI_RESET);}
+        if (color == 4) {plateau[x][y] = (ANSI_YELLOW + player + ANSI_RESET);}
+
     }
 }
