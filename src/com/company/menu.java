@@ -64,8 +64,8 @@ public class menu {
 //         Afficher les scores des dernieres parties
         else if(choix.equals("3")){
             System.out.println("Les 10 derniers gagnants sont :");
-            for(int i = 0; i < Main.score.length;i++){
-                System.out.println(Main.score[i]);
+            for(int i = 0; i < Main.score.length;i++){  // on parcourt le tableau score
+                System.out.println(Main.score[i]);      // on affiche le tableau
             }
 
             returntomenu();

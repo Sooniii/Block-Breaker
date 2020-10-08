@@ -27,6 +27,7 @@ public class Fonction {
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_BLUE = "\u001B[34m";
 
+    // On crée un tableau pour stocker les gagnants
     public static String[] creationTableau() {
         String [] tabResultat = new String[10];
         for (int i = 0; i < tabResultat.length;i++ ){
