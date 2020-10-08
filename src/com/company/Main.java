@@ -31,6 +31,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws InterruptedException {
+        Fonction.flush(1);
         System.out.println("Bienvenue dans Block-Breaker :");
         menu.menu();
         while (true) {
