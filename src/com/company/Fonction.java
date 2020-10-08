@@ -5,6 +5,10 @@ public class Fonction {
 
     public static String couleurs;
 
+    /**
+     * Fonction pour sauter de ligne
+     * @param a Saut de ligne avec paramètre Int "a" reçu
+     */
     //Fonction pour sauter de ligne
     public static void flush(int a) {
         for (int i = 0; i < a; i = i + 1) {
@@ -227,6 +231,12 @@ public class Fonction {
         if (color.equals("jaune")) {plateau[x][y] = (ANSI_YELLOW + player + ANSI_RESET);}
 
     }
+
+    /**
+     * Fonction qui vérifie si un String est un Int ou non
+     * @param s Le String à vérifier
+     * @return true ou false
+     */
     static boolean isNumber(String s)
     {
         for (int i = 0; i < s.length(); i++)

@@ -3,6 +3,10 @@ package com.company;
 import java.util.Scanner;
 
 public class menu {
+    /**
+     * Fonction qui permet d'afficher si l'utilisateur veut revenir au menu
+     * @throws InterruptedException si l'utilisateur marque "o" la fonction renvois au menu, sinon, le terminale affiche "ERREUR" et relance cette fonction
+     */
     //Fonction retour au menu
     public static void returntomenu() throws InterruptedException {
         Scanner exit = new Scanner(System.in);
@@ -26,11 +30,16 @@ public class menu {
         System.out.print("   - Quitter le jeu [4]\n");
         Scanner scanner = new Scanner(System.in);
         String choix = scanner.next();
-
+        /**
+         * Si l'utilisateur marque "1" le jeu se lance
+         */
         //Lancer le jeu
         if( choix.equals("1")){
             // System.out.println("Ecriver le nombres de joueurs participants");
         }
+        /**
+         * Si l'uetilisateur marque "2" les règles s'affichent
+         */
         // Les règles du jeu :
         else if(choix.equals("2")){
             System.out.println("####################################################################");
@@ -58,7 +67,9 @@ public class menu {
             // Retour au menu ?
             returntomenu();
         }
-
+        /**
+         * Si l'utilisateur marque "4" le jeu s'eteint
+         */
         //Quitter le jeu
         else if(choix.equals("4")){
             Fonction.flush(20);
@@ -70,7 +81,9 @@ public class menu {
             Thread.sleep(500);
             Main.close();
         }
-
+        /**
+         * Si l'utilisateur marque "easterEgg" un secret se déclanche puis retourne au menu
+         */
         //Easter egg
         else if(choix.equals("easterEgg")){
             System.out.println("\n" +
@@ -88,7 +101,9 @@ public class menu {
                     "                                                                                                                                                                           \n");
             menu();
         }
-
+        /**
+         * Si le caractère indiqué n'est pas valide un message d'erreur s'affiche puis retourne au menu
+         */
         //Si le caractère indiqué n'est pas valide
         else{
             Fonction.flush(10);
