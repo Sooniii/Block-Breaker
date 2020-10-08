@@ -2,7 +2,9 @@ package com.company;
 
 import java.util.Scanner;
 public class Fonction {
+
     public static String couleurs;
+
     //Fonction pour sauter de ligne
     public static void flush(int a) {
         for (int i = 0; i < a; i = i + 1) {
@@ -10,54 +12,53 @@ public class Fonction {
         }
     }
 
-
-    /**
-     * Cette fonction sert à choisir le pseudo
-     *
-     * @return Le pseudo choisi au format String
-     */
-
     //Fonction pour choisir les pseudo
     public static String choisirPseudo() {
 
-        Scanner sc = new Scanner(System.in);                        //Appelle l'objet Scanner
-        String pseudo = sc.next();                                  //Le joueur tape son pseudo
-        return pseudo;                                              //Renvoie le pseudo du joueur
+        Scanner sc = new Scanner(System.in);
+        String pseudo = sc.next();
+        return pseudo;
     }
 
-    public static final String ANSI_RESET = "\u001B[0m";                // Initialisation des couleurs
-    public static final String ANSI_PURPLE = "\u001B[35m";              // Initialisation de la couleur violette
-    public static final String ANSI_YELLOW = "\u001B[33m";              // Initialisation de la couleur jaune
-    public static final String ANSI_RED = "\u001B[31m";                 // Initialisation de la couleur rouge
-    public static final String ANSI_BLUE = "\u001B[34m";                // Initialisation de la couleur bleu
+    // Initialisation des couleurs
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_BLUE = "\u001B[34m";
 
-    public static String choisirCouleur() {
-        Scanner sc = new Scanner(System.in);                        //Appelle l'objet Scanner
+    // Choisir la couleur
+    public static String choisirCouleur(String joueur) {
+        Scanner sc = new Scanner(System.in);
         String couleur = sc.next();
         if (couleur.equals("rouge") || couleur.equals("bleu") || couleur.equals("jaune") || couleur.equals("violet")) {
             couleurs = couleur;
             return couleur;
         }
-        else {
+        else { //Repose la question si la couleur n'existe pas
             System.out.println("La couleur indiquée n'est pas valide");
-            System.out.println("Le joueur est de quelle couleur ?");
-            choisirCouleur();
+            System.out.println(joueur + " est de quelle couleur ?");
+            choisirCouleur(joueur);
         }
         return couleurs;
     }
 
-    //Fonction pour lancer la partie
+    //Fonction pour lancer la partie a 2 joueurs
     public static String[][] lancerPartie(String joueur1, String couleur1, String joueur2, String couleur2) {
 
-        String[][] plateau = new String[11][12];                        // Creation du plateau
-        joueur1 = joueur1.substring(0,1);                               //Prends la premiere lettre du pseudo du J1
-        joueur2 = joueur2.substring(0,1);                               //Prends la premiere lettre du pseudo du J2
+        //Creer le tableau et tronque le pseudo
+        String[][] plateau = new String[12][13];
+        joueur1 = joueur1.substring(0,1);
+        joueur2 = joueur2.substring(0,1);
 
-        for (int i = 0; i < plateau.length; i++) {                      //Parcours le tableau à l'horizontal
-            for (int j = 0; j < plateau[0].length; j++) {               //Parcours le tableau à la vertical
-                plateau[i][j] = "[]";                                   //Creer les cases
-                if (i == 0) { plateau[i][j] = Integer.toString(j);}     //Place les index des cases horizontaux
-                if (j == 0) { plateau[i][j] = Integer.toString(i);}     //Place les index des cases verticales
+        //Rempli le tableau et place les joueurs
+        for (int i = 0; i < plateau.length; i++) {
+            for (int j = 0; j < plateau[0].length; j++) {
+                plateau[i][j] = "[]";
+                if (i == 0) { plateau[i][j] = Integer.toString(j);}
+                if (j == 0) { plateau[i][j] = Integer.toString(i);}
+                if (i == (plateau.length -1)) { plateau[i][j] = "";}
+                if (j == (plateau[0].length -1)) { plateau[i][j] = "";}
                 if (i == 5 && j == 6) {
                     if (couleur1.equals("rouge")) {plateau[i][j] = (ANSI_RED + joueur1 + ANSI_RESET);}
                     else if (couleur1.equals("bleu")) {plateau[i][j] = (ANSI_BLUE + joueur1 + ANSI_RESET);}
@@ -70,25 +71,31 @@ public class Fonction {
                     else if (couleur2.equals("violet")) {plateau[i][j] = (ANSI_PURPLE + joueur2 + ANSI_RESET);}
                     else if (couleur2.equals("jaune")) {plateau[i][j] = (ANSI_YELLOW + joueur2 + ANSI_RESET);}
                 }
-
-                System.out.print(plateau[i][j] + "\t");                 //Affiche le tableau
+                //Affiche le plateau
+                System.out.print(plateau[i][j] + "\t");
             }
-            System.out.println();                                       //Saute une ligne
+            System.out.println();
         }
-        return plateau;                                                 //Renvoie le tableau
+        return plateau;
     }
+
+    //Fonction pour lancer la partie a 3 joueurs
     public static String[][] lancerPartie(String joueur1, String couleur1, String joueur2, String couleur2, String joueur3, String couleur3) {
 
-        String[][] plateau = new String[11][12];                        // Creation du plateau
-        joueur1 = joueur1.substring(0,1);                               //Prends la premiere lettre du pseudo du J1
-        joueur2 = joueur2.substring(0,1);                               //Prends la premiere lettre du pseudo du J2
+        //Creer le tableau et tronque le pseudo
+        String[][] plateau = new String[12][13];
+        joueur1 = joueur1.substring(0,1);
+        joueur2 = joueur2.substring(0,1);
         joueur3 = joueur3.substring(0,1);
 
-        for (int i = 0; i < plateau.length; i++) {                      //Parcours le tableau à l'horizontal
-            for (int j = 0; j < plateau[0].length; j++) {               //Parcours le tableau à la vertical
-                plateau[i][j] = "[]";                                   //Creer les cases
-                if (i == 0) { plateau[i][j] = Integer.toString(j);}     //Place les index des cases horizontaux
-                if (j == 0) { plateau[i][j] = Integer.toString(i);}     //Place les index des cases verticales
+        //Rempli le tableau et place les joueurs
+        for (int i = 0; i < plateau.length; i++) {
+            for (int j = 0; j < plateau[0].length; j++) {
+                plateau[i][j] = "[]";
+                if (i == 0) { plateau[i][j] = Integer.toString(j);}
+                if (j == 0) { plateau[i][j] = Integer.toString(i);}
+                if (i == (plateau.length -1)) { plateau[i][j] = "";}
+                if (j == (plateau[0].length -1)) { plateau[i][j] = "";}
                 if (i == 5 && j == 6) {
                     if (couleur1.equals("rouge")) {plateau[i][j] = (ANSI_RED + joueur1 + ANSI_RESET);}
                     else if (couleur1.equals("bleu")) {plateau[i][j] = (ANSI_BLUE + joueur1 + ANSI_RESET);}
@@ -107,25 +114,32 @@ public class Fonction {
                     else if (couleur3.equals("violet")) {plateau[i][j] = (ANSI_PURPLE + joueur3 + ANSI_RESET);}
                     else if (couleur3.equals("jaune")) {plateau[i][j] = (ANSI_YELLOW + joueur3 + ANSI_RESET);}
                 }
-                System.out.print(plateau[i][j] + "\t");                 //Affiche le tableau
+                //Affiche le plateau
+                System.out.print(plateau[i][j] + "\t");
             }
-            System.out.println();                                       //Saute une ligne
+            System.out.println();
         }
-        return plateau;                                                 //Renvoie le tableau
+        return plateau;
     }
+
+    //Fonction pour lancer la partie a 4 joueurs
     public static String[][] lancerPartie(String joueur1, String couleur1, String joueur2, String couleur2, String joueur3, String couleur3, String joueur4, String couleur4) {
 
-        String[][] plateau = new String[11][12];                        // Creation du plateau
-        joueur1 = joueur1.substring(0,1);                               //Prends la premiere lettre du pseudo du J1
-        joueur2 = joueur2.substring(0,1);                               //Prends la premiere lettre du pseudo du J2
-        joueur3 = joueur3.substring(0,1);                               //Prends la premiere lettre du pseudo du J3
-        joueur4 = joueur4.substring(0,1);                               //Prends la premiere lettre du pseudo du J4
+        //Creer le tableau et tronque le pseudo
+        String[][] plateau = new String[12][13];
+        joueur1 = joueur1.substring(0,1);
+        joueur2 = joueur2.substring(0,1);
+        joueur3 = joueur3.substring(0,1);
+        joueur4 = joueur4.substring(0,1);
 
-        for (int i = 0; i < plateau.length; i++) {                      //Parcours le tableau à l'horizontal
-            for (int j = 0; j < plateau[0].length; j++) {               //Parcours le tableau à la vertical
-                plateau[i][j] = "[]";                                   //Creer les cases
-                if (i == 0) { plateau[i][j] = Integer.toString(j);}     //Place les index des cases horizontaux
-                if (j == 0) { plateau[i][j] = Integer.toString(i);}     //Place les index des cases verticales
+        //Rempli le tableau et place les joueurs
+        for (int i = 0; i < plateau.length; i++) {
+            for (int j = 0; j < plateau[0].length; j++) {
+                plateau[i][j] = "[]";
+                if (i == 0) { plateau[i][j] = Integer.toString(j);}
+                if (j == 0) { plateau[i][j] = Integer.toString(i);}
+                if (i == (plateau.length -1)) { plateau[i][j] = "";}
+                if (j == (plateau[0].length -1)) { plateau[i][j] = "";}
                 if (i == 5 && j == 6) {
                     if (couleur1.equals("rouge")) {plateau[i][j] = (ANSI_RED + joueur1 + ANSI_RESET);}
                     else if (couleur1.equals("bleu")) {plateau[i][j] = (ANSI_BLUE + joueur1 + ANSI_RESET);}
@@ -150,17 +164,18 @@ public class Fonction {
                     else if (couleur4.equals("violet")) {plateau[i][j] = (ANSI_PURPLE + joueur4 + ANSI_RESET);}
                     else if (couleur4.equals("jaune")) {plateau[i][j] = (ANSI_YELLOW + joueur4 + ANSI_RESET);}
                 }
-                System.out.print(plateau[i][j] + "\t");                 //Affiche le tableau
+                System.out.print(plateau[i][j] + "\t");
             }
-            System.out.println();                                       //Saute une ligne
+            //Affiche le plateau
+            System.out.println();
         }
-        return plateau;                                                 //Renvoie le tableau
+        return plateau;
     }
 
     //Fonction qui affiche le plateau
     public static void afficherPlateau(String[][] plateau) {
         flush(3);
-        for (int i = 0; i < plateau.length; i++) {                      //Boucle pour afficher le plateau
+        for (int i = 0; i < plateau.length; i++) {
             for (int j = 0; j < plateau[0].length; j++) {
                 System.out.print(plateau[i][j] + "\t");
             }
@@ -168,6 +183,7 @@ public class Fonction {
         }
     }
 
+    //Fonction pour bouger vers la gauche
     public static void bougeGauche(String[][] plateau, int x, int y, String player, String color) {
         plateau[x][y] = "[]";
         y -= 1;
@@ -178,6 +194,7 @@ public class Fonction {
         if (color.equals("jaune")) {plateau[x][y] = (ANSI_YELLOW + player + ANSI_RESET);}
 
     }
+    //Fonction pour bouger vers la droite
     public static void bougeDroite(String[][] plateau, int x, int y, String player, String color) {
         plateau[x][y] = "[]";
         y += 1;
@@ -188,6 +205,7 @@ public class Fonction {
         if (color.equals("jaune")) {plateau[x][y] = (ANSI_YELLOW + player + ANSI_RESET);}
 
     }
+    //Fonction pour bouger vers le haut
     public static void bougeHaut(String[][] plateau, int x, int y, String player, String color) {
         plateau[x][y] = "[]";
         x -= 1;
@@ -198,6 +216,7 @@ public class Fonction {
         if (color.equals("jaune")) {plateau[x][y] = (ANSI_YELLOW + player + ANSI_RESET);}
 
     }
+    //Fonction pour bouger vers le bas
     public static void bougeBas(String[][] plateau, int x, int y, String player, String color) {
         plateau[x][y] = "[]";
         x += 1;
