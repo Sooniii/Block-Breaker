@@ -74,8 +74,8 @@ public class Fonction {
         String[][] plateau = new String[11][12];                        // Creation du plateau
         joueur1 = joueur1.substring(0,1);                               //Prends la premiere lettre du pseudo du J1
         joueur2 = joueur2.substring(0,1);                               //Prends la premiere lettre du pseudo du J2
-        joueur3 = joueur3.substring(0,1);
-        joueur4 = joueur4.substring(0,1);
+        joueur3 = joueur3.substring(0,1);                               //Prends la premiere lettre du pseudo du J3
+        joueur4 = joueur4.substring(0,1);                               //Prends la premiere lettre du pseudo du J4
 
         for (int i = 0; i < plateau.length; i++) {                      //Parcours le tableau à l'horizontal
             for (int j = 0; j < plateau[0].length; j++) {               //Parcours le tableau à la vertical

@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 
 public class Main {
-
+    public static int playerAlive;                                      // Nombre de joueurs en vie
     public static final String ANSI_BLACK = "\u001B[30m";
     public static final String ANSI_RED = "\u001B[31m";                 // Initialisation de la couleur rouge
     public static final String ANSI_BLUE = "\u001B[34m";                // Initialisation de la couleur bleu
@@ -61,6 +61,7 @@ public class Main {
             System.out.print("Combien de joueurs ? Entre 2 et 4 joueurs : ");
             nombreJoueur = sc.nextInt();
 
+
             if ((nombreJoueur >= 2 && nombreJoueur <= 4)) {
 
                 if (nombreJoueur == 2) {
@@ -68,6 +69,7 @@ public class Main {
                     joueur1Colonne = 6;
                     joueur2Ligne = 6;
                     joueur2Colonne = 6;
+                    playerAlive = 2;
                 } else if (nombreJoueur == 3) {
                     joueur1Ligne = 5;
                     joueur1Colonne = 6;
@@ -75,6 +77,7 @@ public class Main {
                     joueur2Colonne = 5;
                     joueur3Ligne = 6;
                     joueur3Colonne = 7;
+                    playerAlive = 3;
                 } else {
                     joueur1Ligne = 5;
                     joueur1Colonne = 6;
@@ -84,6 +87,7 @@ public class Main {
                     joueur3Colonne = 7;
                     joueur4Ligne = 7;
                     joueur4Colonne = 6;
+                    playerAlive = 4;
                 }
 
                 System.out.print("Le joueur 1 choisi son pseudo (rouge): ");
@@ -107,9 +111,19 @@ public class Main {
                 tourJoueur = rd.nextInt(nombreJoueur);
 
                 while (signalVictoire) {
-                    if (tourJoueur % nombreJoueur == 0) {
+                    if(playerAlive==1){
+                        signalVictoire = false;
+                        System.out.println("##########################################################");
+                        Fonction.flush(2);
+                        System.out.println("La partie est finie ! Victoire de ");
+                        Fonction.flush(1);
+                    }
+                    else if (tourJoueur % nombreJoueur == 0) {
                         System.out.print("C'est à " + joueur1 + " (rouge) de jouer, utilise z,q,s,d pour te déplacer (si tu te trompe de touche ou que tu choisi une direction impossible ca passe ton tour !) : ");
                         bouton = sc.next();
+                        if (bouton.equals("debug")){
+                            playerAlive = 1;
+                        }
                         if (bouton.equals("z") && joueur1Ligne > 1) {
                             Fonction.bougeHaut(plateau, joueur1Ligne, joueur1Colonne, joueur1, 1);
                             joueur1Ligne -= 1;
@@ -151,7 +165,7 @@ public class Main {
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
                     } else if (tourJoueur % nombreJoueur == 2){
-                        System.out.print("C'est à " + joueur3 + " (blanc) de jouer, utilise z,q,s,d pour te déplacer (si tu te trompe de touche ou que tu choisi une direction impossible ca passe ton tour !) : ");
+                        System.out.print("C'est à " + joueur3 + " (Violet) de jouer, utilise z,q,s,d pour te déplacer (si tu te trompe de touche ou que tu choisi une direction impossible ca passe ton tour !) : ");
                         bouton = sc.next();
                         if (bouton.equals("z") && joueur3Ligne > 1) {
                             Fonction.bougeHaut(plateau, joueur3Ligne, joueur3Colonne, joueur3, 3);
@@ -172,7 +186,7 @@ public class Main {
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
                     } else if (tourJoueur % nombreJoueur == 3){
-                        System.out.print("C'est à " + joueur4 + " (blanc) de jouer, utilise z,q,s,d pour te déplacer (si tu te trompe de touche ou que tu choisi une direction impossible ca passe ton tour !) : ");
+                        System.out.print("C'est à " + joueur4 + " (Jaune) de jouer, utilise z,q,s,d pour te déplacer (si tu te trompe de touche ou que tu choisi une direction impossible ca passe ton tour !) : ");
                         bouton = sc.next();
                         if (bouton.equals("z") && joueur4Ligne > 1) {
                             Fonction.bougeHaut(plateau, joueur4Ligne, joueur4Colonne, joueur4, 3);
