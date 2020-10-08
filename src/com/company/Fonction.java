@@ -2,8 +2,9 @@ package com.company;
 
 import java.util.Scanner;
 public class Fonction {
+    public static String couleurs;
     //Fonction pour sauter de ligne
-    public static void flush(int a){
+    public static void flush(int a) {
         for (int i = 0; i < a; i = i + 1) {
             System.out.println(" ");
         }
@@ -12,16 +13,18 @@ public class Fonction {
 
     /**
      * Cette fonction sert à choisir le pseudo
+     *
      * @return Le pseudo choisi au format String
      */
 
     //Fonction pour choisir les pseudo
     public static String choisirPseudo() {
 
-            Scanner sc = new Scanner(System.in);                        //Appelle l'objet Scanner
-            String pseudo = sc.next();                                  //Le joueur tape son pseudo
-            return pseudo;                                              //Renvoie le pseudo du joueur
+        Scanner sc = new Scanner(System.in);                        //Appelle l'objet Scanner
+        String pseudo = sc.next();                                  //Le joueur tape son pseudo
+        return pseudo;                                              //Renvoie le pseudo du joueur
     }
+
     public static final String ANSI_RESET = "\u001B[0m";                // Initialisation des couleurs
     public static final String ANSI_PURPLE = "\u001B[35m";              // Initialisation de la couleur violette
     public static final String ANSI_YELLOW = "\u001B[33m";              // Initialisation de la couleur jaune
@@ -31,7 +34,16 @@ public class Fonction {
     public static String choisirCouleur() {
         Scanner sc = new Scanner(System.in);                        //Appelle l'objet Scanner
         String couleur = sc.next();
-        return couleur;
+        if (couleur.equals("rouge") || couleur.equals("bleu") || couleur.equals("jaune") || couleur.equals("violet")) {
+            couleurs = couleur;
+            return couleur;
+        }
+        else {
+            System.out.println("La couleur indiquée n'est pas valide");
+            System.out.println("Le joueur est de quelle couleur ?");
+            choisirCouleur();
+        }
+        return couleurs;
     }
 
     //Fonction pour lancer la partie
