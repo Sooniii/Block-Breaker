@@ -163,6 +163,7 @@ public class Main {
                         else if (player3Alive) {vainqueur = joueur3;}
                         else if (player4Alive) {vainqueur = joueur4;}
                         System.out.println("La partie est finie ! Victoire de : " + vainqueur);
+                        // Stockage des vainqueurs dans le tableau score
                         for (int i = 0; i < score.length; i++){
                             if(score[i].equals("")) {
                                 score[i] = vainqueur;
