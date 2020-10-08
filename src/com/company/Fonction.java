@@ -31,6 +31,13 @@ public class Fonction {
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_BLUE = "\u001B[34m";
 
+    public static String[] creationTableau() {
+        String [] tabResultat = new String[10];
+        for (int i = 0; i < tabResultat.length;i++ ){
+            tabResultat[i] = "";
+        } return tabResultat;
+    }
+
     // Choisir la couleur
     public static String choisirCouleur(String joueur) {
         Scanner sc = new Scanner(System.in);
@@ -245,4 +252,6 @@ public class Fonction {
 
         return true;
     }
+
+
 }

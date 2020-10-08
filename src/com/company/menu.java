@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.Scanner;
+import java.util.SortedMap;
 
 public class menu {
     /**
@@ -20,6 +21,8 @@ public class menu {
             System.out.println("ERREUR");
             returntomenu();
         }
+    }
+    public static void afficherScore(){
     }
     public static void menu() throws InterruptedException {
         //Introduction
@@ -67,6 +70,16 @@ public class menu {
             // Retour au menu ?
             returntomenu();
         }
+
+//         Afficher les scores des dernieres parties
+        else if(choix.equals("3")){
+            System.out.println("Les 10 derniers gagnants sont :");
+            for(int i = 0; i < Main.score.length;i++){
+                System.out.println(Main.score[i]);
+            }
+
+            returntomenu();
+            }
         /**
          * Si l'utilisateur marque "4" le jeu s'eteint
          */
@@ -99,6 +112,22 @@ public class menu {
                     "▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░▌      ▐░░▌     ▐░▌          ▐░▌        ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌      ▐░░▌\n" +
                     " ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀       ▀            ▀          ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀ \n" +
                     "                                                                                                                                                                           \n");
+            menu();
+        }
+
+        else if(choix.equals("easterEggW")){
+            System.out.println("\n" +
+                    "$$\\    $$\\ $$\\                            $$\\      $$\\                           $$\\                               \n" +
+                    "$$ |   $$ |\\__|                           $$ | $\\  $$ |                          $$ |                              \n" +
+                    "$$ |   $$ |$$\\ $$\\    $$\\  $$$$$$\\        $$ |$$$\\ $$ | $$$$$$\\        $$\\  $$$$$$$ | $$$$$$\\  $$$$$$$\\   $$$$$$\\  \n" +
+                    "\\$$\\  $$  |$$ |\\$$\\  $$  |$$  __$$\\       $$ $$ $$\\$$ |$$  __$$\\       \\__|$$  __$$ |$$  __$$\\ $$  __$$\\ $$  __$$\\ \n" +
+                    " \\$$\\$$  / $$ | \\$$\\$$  / $$$$$$$$ |      $$$$  _$$$$ |$$$$$$$$ |      $$\\ $$ /  $$ |$$$$$$$$ |$$ |  $$ |$$$$$$$$ |\n" +
+                    "  \\$$$  /  $$ |  \\$$$  /  $$   ____|      $$$  / \\$$$ |$$   ____|      $$ |$$ |  $$ |$$   ____|$$ |  $$ |$$   ____|\n" +
+                    "   \\$  /   $$ |   \\$  /   \\$$$$$$$\\       $$  /   \\$$ |\\$$$$$$$\\       $$ |\\$$$$$$$ |\\$$$$$$$\\ $$ |  $$ |\\$$$$$$$\\ \n" +
+                    "    \\_/    \\__|    \\_/     \\_______|      \\__/     \\__| \\_______|      $$ | \\_______| \\_______|\\__|  \\__| \\_______|\n" +
+                    "                                                                 $$\\   $$ |                                        \n" +
+                    "                                                                 \\$$$$$$  |                                        \n" +
+                    "                                                                  \\______/                                         \n");
             menu();
         }
         /**
