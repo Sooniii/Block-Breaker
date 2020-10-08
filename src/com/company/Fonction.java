@@ -208,4 +208,12 @@ public class Fonction {
         if (color.equals("jaune")) {plateau[x][y] = (ANSI_YELLOW + player + ANSI_RESET);}
 
     }
+    static boolean isNumber(String s)
+    {
+        for (int i = 0; i < s.length(); i++)
+            if (Character.isDigit(s.charAt(i)) == false)
+                return false;
+
+        return true;
+    }
 }

@@ -6,7 +6,8 @@ import java.util.Scanner;
 
 
 public class Main {
-
+    public static int caseToDestructX;
+    public static int caseToDestructY;
     public static int playerAlive;
 
     //fonction pour éteindre le jeu
@@ -151,10 +152,16 @@ public class Main {
                         Fonction.afficherPlateau(plateau);
                         Scanner tourX = new Scanner(System.in);
                         System.out.println("Quelle case détruire (Abscisse)");
-                        int caseToDestructX = tourX.nextInt();
+                        String caseToDestructXstring = tourX.next();
                         System.out.println("Quelle case détruire (Ordonnée)");
                         Scanner tourY = new Scanner(System.in);
-                        int caseToDestructY = tourY.nextInt();
+                        String caseToDestructYstring = tourX.next();
+                        boolean numberX = Fonction.isNumber(caseToDestructXstring);
+                        boolean numberY = Fonction.isNumber(caseToDestructYstring);
+                        if(numberX && numberY){
+                            caseToDestructX = Integer.parseInt(caseToDestructXstring);
+                            caseToDestructY = Integer.parseInt(caseToDestructYstring);
+                        }
                         if ((plateau[joueur1Ligne][joueur1Colonne] != plateau[caseToDestructY][caseToDestructX])
                                 && (plateau[joueur2Ligne][joueur2Colonne] != plateau[caseToDestructY][caseToDestructX])
                                 && (plateau[joueur3Ligne][joueur3Colonne] != plateau[caseToDestructY][caseToDestructX])
@@ -187,10 +194,16 @@ public class Main {
                         Fonction.afficherPlateau(plateau);
                         Scanner tourX = new Scanner(System.in);
                         System.out.println("Quelle case détruire (Abscisse)");
-                        int caseToDestructX = tourX.nextInt();
+                        String caseToDestructXstring = tourX.next();
                         System.out.println("Quelle case détruire (Ordonnée)");
                         Scanner tourY = new Scanner(System.in);
-                        int caseToDestructY = tourY.nextInt();
+                        String caseToDestructYstring = tourX.next();
+                        boolean numberX = Fonction.isNumber(caseToDestructXstring);
+                        boolean numberY = Fonction.isNumber(caseToDestructYstring);
+                        if(numberX && numberY){
+                            caseToDestructX = Integer.parseInt(caseToDestructXstring);
+                            caseToDestructY = Integer.parseInt(caseToDestructYstring);
+                        }
                         if ((plateau[joueur1Ligne][joueur1Colonne] != plateau[caseToDestructY][caseToDestructX])
                                 && (plateau[joueur2Ligne][joueur2Colonne] != plateau[caseToDestructY][caseToDestructX])
                                 && (plateau[joueur3Ligne][joueur3Colonne] != plateau[caseToDestructY][caseToDestructX])
@@ -222,10 +235,16 @@ public class Main {
                         Fonction.afficherPlateau(plateau);
                         Scanner tourX = new Scanner(System.in);
                         System.out.println("Quelle case détruire (Abscisse)");
-                        int caseToDestructX = tourX.nextInt();
+                        String caseToDestructXstring = tourX.next();
                         System.out.println("Quelle case détruire (Ordonnée)");
                         Scanner tourY = new Scanner(System.in);
-                        int caseToDestructY = tourY.nextInt();
+                        String caseToDestructYstring = tourX.next();
+                        boolean numberX = Fonction.isNumber(caseToDestructXstring);
+                        boolean numberY = Fonction.isNumber(caseToDestructYstring);
+                        if(numberX && numberY){
+                            caseToDestructX = Integer.parseInt(caseToDestructXstring);
+                            caseToDestructY = Integer.parseInt(caseToDestructYstring);
+                        }
                         if ((plateau[joueur1Ligne][joueur1Colonne] != plateau[caseToDestructY][caseToDestructX])
                                 && (plateau[joueur2Ligne][joueur2Colonne] != plateau[caseToDestructY][caseToDestructX])
                                 && (plateau[joueur3Ligne][joueur3Colonne] != plateau[caseToDestructY][caseToDestructX])
@@ -236,7 +255,7 @@ public class Main {
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
                     } else if (tourJoueur % nombreJoueur == 3){
-                        System.out.print("C'est à " + joueur4 +  " (" + couleur1 + ") de jouer, utilise z,q,s,d pour te déplacer (si tu te trompe de touche ou que tu choisi une direction impossible ca passe ton tour !) : ");
+                        System.out.print("C'est à " + joueur4 +  " (" + couleur4 + ") de jouer, utilise z,q,s,d pour te déplacer (si tu te trompe de touche ou que tu choisi une direction impossible ca passe ton tour !) : ");
                         bouton = sc.next();
                         if (bouton.equals("z") && joueur4Ligne > 1) {
                             Fonction.bougeHaut(plateau, joueur4Ligne, joueur4Colonne, joueur4, couleur4);
@@ -257,10 +276,17 @@ public class Main {
                         Fonction.afficherPlateau(plateau);
                         Scanner tourX = new Scanner(System.in);
                         System.out.println("Quelle case détruire (Abscisse)");
-                        int caseToDestructX = tourX.nextInt();
+                        String caseToDestructXstring = tourX.next();
                         System.out.println("Quelle case détruire (Ordonnée)");
                         Scanner tourY = new Scanner(System.in);
-                        int caseToDestructY = tourY.nextInt();
+                        String caseToDestructYstring = tourX.next();
+                        boolean numberX = Fonction.isNumber(caseToDestructXstring);
+                        boolean numberY = Fonction.isNumber(caseToDestructYstring);
+                        if(numberX && numberY){
+                            caseToDestructX = Integer.parseInt(caseToDestructXstring);
+                            caseToDestructY = Integer.parseInt(caseToDestructYstring);
+                        }
+
                         if ((plateau[joueur1Ligne][joueur1Colonne] != plateau[caseToDestructY][caseToDestructX])
                                 && (plateau[joueur2Ligne][joueur2Colonne] != plateau[caseToDestructY][caseToDestructX])
                                 && (plateau[joueur3Ligne][joueur3Colonne] != plateau[caseToDestructY][caseToDestructX])
