@@ -17,6 +17,8 @@ public class menu {
             returntomenu();
         }
     }
+    public static void afficherScore(){
+    }
     public static void menu() throws InterruptedException {
         //Introduction
         Fonction.flush(1);
@@ -58,7 +60,15 @@ public class menu {
             // Retour au menu ?
             returntomenu();
         }
+//         Afficher les scores des dernieres parties
+        else if(choix.equals("3")){
+            System.out.println("Les 10 derniers gagnants sont :");
+            for(int i = 0; i < Main.score.length;i++){
+                System.out.println(Main.score[i]);
+            }
 
+            returntomenu();
+            }
         //Quitter le jeu
         else if(choix.equals("4")){
             Fonction.flush(20);
