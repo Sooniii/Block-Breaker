@@ -216,10 +216,10 @@ public class Main {
                             caseToDestructY = Integer.parseInt(caseToDestructYstring);
                         }
                         if (plateau[caseToDestructY][caseToDestructX].equals("[]")) {
-                            if (couleur1.equals("rouge")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_RED + "X" + ANSI_RESET);}
-                            if (couleur1.equals("bleu")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_BLUE + "X" + ANSI_RESET);}
-                            if (couleur1.equals("violet")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_PURPLE + "X" + ANSI_RESET);}
-                            if (couleur1.equals("jaune")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_YELLOW + "X" + ANSI_RESET);}
+                            if (couleur1.equals("rouge")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_RED + "#" + ANSI_RESET);}
+                            if (couleur1.equals("bleu")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_BLUE + "#" + ANSI_RESET);}
+                            if (couleur1.equals("violet")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_PURPLE + "#" + ANSI_RESET);}
+                            if (couleur1.equals("jaune")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_YELLOW + "#" + ANSI_RESET);}
                         }
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
@@ -266,10 +266,10 @@ public class Main {
                             caseToDestructY = Integer.parseInt(caseToDestructYstring);
                         }
                         if (plateau[caseToDestructY][caseToDestructX].equals("[]")) {
-                            if (couleur2.equals("rouge")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_RED + "X" + ANSI_RESET);}
-                            if (couleur2.equals("bleu")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_BLUE + "X" + ANSI_RESET);}
-                            if (couleur2.equals("violet")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_PURPLE + "X" + ANSI_RESET);}
-                            if (couleur2.equals("jaune")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_YELLOW + "X" + ANSI_RESET);}
+                            if (couleur2.equals("rouge")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_RED + "#" + ANSI_RESET);}
+                            if (couleur2.equals("bleu")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_BLUE + "#" + ANSI_RESET);}
+                            if (couleur2.equals("violet")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_PURPLE + "#" + ANSI_RESET);}
+                            if (couleur2.equals("jaune")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_YELLOW + "#" + ANSI_RESET);}
                         }
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
@@ -316,10 +316,10 @@ public class Main {
                             caseToDestructY = Integer.parseInt(caseToDestructYstring);
                         }
                         if (plateau[caseToDestructY][caseToDestructX].equals("[]")) {
-                            if (couleur3.equals("rouge")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_RED + "X" + ANSI_RESET);}
-                            if (couleur3.equals("bleu")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_BLUE + "X" + ANSI_RESET);}
-                            if (couleur3.equals("violet")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_PURPLE + "X" + ANSI_RESET);}
-                            if (couleur3.equals("jaune")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_YELLOW + "X" + ANSI_RESET);}
+                            if (couleur3.equals("rouge")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_RED + "#" + ANSI_RESET);}
+                            if (couleur3.equals("bleu")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_BLUE + "#" + ANSI_RESET);}
+                            if (couleur3.equals("violet")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_PURPLE + "#" + ANSI_RESET);}
+                            if (couleur3.equals("jaune")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_YELLOW + "#" + ANSI_RESET);}
                         }
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
@@ -366,10 +366,10 @@ public class Main {
                             caseToDestructY = Integer.parseInt(caseToDestructYstring);
                         }
                         if (plateau[caseToDestructY][caseToDestructX].equals("[]")) {
-                            if (couleur4.equals("rouge")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_RED + "X" + ANSI_RESET);}
-                            if (couleur4.equals("bleu")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_BLUE + "X" + ANSI_RESET);}
-                            if (couleur4.equals("violet")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_PURPLE + "X" + ANSI_RESET);}
-                            if (couleur4.equals("jaune")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_YELLOW + "X" + ANSI_RESET);}
+                            if (couleur4.equals("rouge")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_RED + "#" + ANSI_RESET);}
+                            if (couleur4.equals("bleu")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_BLUE + "#" + ANSI_RESET);}
+                            if (couleur4.equals("violet")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_PURPLE + "#" + ANSI_RESET);}
+                            if (couleur4.equals("jaune")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_YELLOW + "#" + ANSI_RESET);}
                         }
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
