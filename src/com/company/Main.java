@@ -172,7 +172,8 @@ public class Main {
                         }
                          Fonction.flush(1);
 //                        startnew();
-                    } //Premier joueur a jouer
+                    }
+                    if (playerAlive==1){break;}//Premier joueur a jouer
                     if (!(player1Alive)) {tourJoueur += 1;}
                     if (player1Alive && plateau[joueur1Ligne][joueur1Colonne+1] != "[]" && plateau[joueur1Ligne][joueur1Colonne-1]!= "[]"
                             && plateau[joueur1Ligne+1][joueur1Colonne]!= "[]" && plateau[joueur1Ligne-1][joueur1Colonne]!= "[]"){
@@ -377,6 +378,10 @@ public class Main {
                     }
                 }
                 //Propose de relancer une partie
+                player1Alive = false;
+                player2Alive = false;
+                player3Alive = false;
+                player4Alive = false;
                 startnew();
             }
             else { //Si l'utilisateur entre un mauvais chiffre pour le nombre de joueur, lui repose la question
