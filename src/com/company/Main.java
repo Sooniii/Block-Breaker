@@ -19,6 +19,9 @@ public class Main {
     public static String[] score = Fonction.creationTableau();
 
 
+    /**
+     * Fonction qui permet d'éteindre le jeu
+     */
     //fonction pour éteindre le jeu
     public static void close(){
         System.exit(0);

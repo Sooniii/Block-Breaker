@@ -1,8 +1,5 @@
 package com.company;
-
 import java.util.Scanner;
-import java.util.SortedMap;
-
 public class menu {
     /**
      * Fonction qui permet d'afficher si l'utilisateur veut revenir au menu
@@ -23,6 +20,11 @@ public class menu {
         }
     }
 
+
+    /**
+     * Fonction qui affiche le menu
+     * @throws InterruptedException Permet de faire Thread.sleep
+     */
     public static void menu() throws InterruptedException {
         //Introduction
         Fonction.flush(1);
@@ -37,10 +39,9 @@ public class menu {
          */
         //Lancer le jeu
         if( choix.equals("1")){
-            // System.out.println("Ecriver le nombres de joueurs participants");
         }
         /**
-         * Si l'uetilisateur marque "2" les règles s'affichent
+         * Si l'utilisateur marque "2" les règles s'affichent
          */
         // Les règles du jeu :
         else if(choix.equals("2")){
@@ -52,7 +53,8 @@ public class menu {
             System.out.print("- Si le joueur ne peut plus bouger, il a perdu\n \n");
             System.out.print( "Contraintes :\n");
             System.out.print( "- Un joueur ne peut pas détruire une case occupée.\n");
-            System.out.print("- Un joueur ne peut pas occuper une case détruite ou une case déjà occupée. \n \n");
+            System.out.print("- Un joueur ne peut pas occuper une case détruite ou une case déjà occupée. \n");
+            System.out.print("- Un joueur peut ne pas se déplacer mais il pourra quand même détruire une case\n");
             System.out.print("GUIDE :\n");
             System.out.print("\n Menu :\n");
             System.out.print("- Lancer le jeu : Permet de démarrer une partie\n");
@@ -85,7 +87,7 @@ public class menu {
         //Quitter le jeu
         else if(choix.equals("4")){
             Fonction.flush(20);
-            System.out.println("Merci d'avoir jouer");
+            System.out.println("Merci d'avoir joué");
             for(int i = 0; i < 3; i=i+1){
                 Thread.sleep(300);
                 System.out.println("<3");
@@ -93,9 +95,6 @@ public class menu {
             Thread.sleep(500);
             Main.close();
         }
-        /**
-         * Si l'utilisateur marque "easterEgg" un secret se déclanche puis retourne au menu
-         */
         //Easter egg
         else if(choix.equals("easterEgg")){
             System.out.println("\n" +
@@ -129,9 +128,6 @@ public class menu {
                     "                                                                  \\______/                                         \n");
             menu();
         }
-        /**
-         * Si le caractère indiqué n'est pas valide un message d'erreur s'affiche puis retourne au menu
-         */
         //Si le caractère indiqué n'est pas valide
         else{
             Fonction.flush(10);
