@@ -7,9 +7,8 @@ import java.util.Scanner;
 
 public class Main {
     //Declarations des variables globales
-    public static int caseToDestructX;
-    public static int caseToDestructY;
-    public static int playerAlive;
+    public static int caseADetruireX;
+    public static int caseADetruireY;
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_YELLOW = "\u001B[33m";
@@ -22,7 +21,7 @@ public class Main {
      * Fonction qui permet d'éteindre le jeu
      */
     //fonction pour éteindre le jeu
-    public static void close(){
+    public static void eteindre(){
         System.exit(0);
     }
     /**
@@ -30,7 +29,7 @@ public class Main {
      * @throws InterruptedException Si l'utilisateur marque "o" La partie recommence, Si l'utilisateur marque "n" L'utilisateur retourne au menu
      */
     //Fonction pour relancer une partie
-    public static void startnew() throws InterruptedException {
+    public static void recommencer() throws InterruptedException {
         System.out.println("Relancer une partie ? [o] [n]");
         Scanner newGame = new Scanner(System.in);
         String newgame = newGame.next();
@@ -41,7 +40,7 @@ public class Main {
 
         }
         else{                           //si autre
-            startnew();
+            recommencer();
         }
     }
 
@@ -217,14 +216,14 @@ public class Main {
                         boolean numberX = Fonction.estUnNombre(caseToDestructXstring);
                         boolean numberY = Fonction.estUnNombre(caseToDestructYstring);
                         if(numberX && numberY){
-                            caseToDestructX = Integer.parseInt(caseToDestructXstring);
-                            caseToDestructY = Integer.parseInt(caseToDestructYstring);
+                            caseADetruireX = Integer.parseInt(caseToDestructXstring);
+                            caseADetruireY = Integer.parseInt(caseToDestructYstring);
                         }
-                        if (plateau[caseToDestructY][caseToDestructX].equals("[]")) {
-                            if (couleur1.equals("rouge")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_RED + "#" + ANSI_RESET);}
-                            if (couleur1.equals("bleu")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_BLUE + "#" + ANSI_RESET);}
-                            if (couleur1.equals("violet")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_PURPLE + "#" + ANSI_RESET);}
-                            if (couleur1.equals("jaune")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_YELLOW + "#" + ANSI_RESET);}
+                        if (plateau[caseADetruireY][caseADetruireX].equals("[]")) {
+                            if (couleur1.equals("rouge")) {plateau[caseADetruireY][caseADetruireX] = (ANSI_RED + "#" + ANSI_RESET);}
+                            if (couleur1.equals("bleu")) {plateau[caseADetruireY][caseADetruireX] = (ANSI_BLUE + "#" + ANSI_RESET);}
+                            if (couleur1.equals("violet")) {plateau[caseADetruireY][caseADetruireX] = (ANSI_PURPLE + "#" + ANSI_RESET);}
+                            if (couleur1.equals("jaune")) {plateau[caseADetruireY][caseADetruireX] = (ANSI_YELLOW + "#" + ANSI_RESET);}
                         }
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
@@ -267,14 +266,14 @@ public class Main {
                         boolean numberX = Fonction.estUnNombre(caseToDestructXstring);
                         boolean numberY = Fonction.estUnNombre(caseToDestructYstring);
                         if(numberX && numberY){
-                            caseToDestructX = Integer.parseInt(caseToDestructXstring);
-                            caseToDestructY = Integer.parseInt(caseToDestructYstring);
+                            caseADetruireX = Integer.parseInt(caseToDestructXstring);
+                            caseADetruireY = Integer.parseInt(caseToDestructYstring);
                         }
-                        if (plateau[caseToDestructY][caseToDestructX].equals("[]")) {
-                            if (couleur2.equals("rouge")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_RED + "#" + ANSI_RESET);}
-                            if (couleur2.equals("bleu")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_BLUE + "#" + ANSI_RESET);}
-                            if (couleur2.equals("violet")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_PURPLE + "#" + ANSI_RESET);}
-                            if (couleur2.equals("jaune")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_YELLOW + "#" + ANSI_RESET);}
+                        if (plateau[caseADetruireY][caseADetruireX].equals("[]")) {
+                            if (couleur2.equals("rouge")) {plateau[caseADetruireY][caseADetruireX] = (ANSI_RED + "#" + ANSI_RESET);}
+                            if (couleur2.equals("bleu")) {plateau[caseADetruireY][caseADetruireX] = (ANSI_BLUE + "#" + ANSI_RESET);}
+                            if (couleur2.equals("violet")) {plateau[caseADetruireY][caseADetruireX] = (ANSI_PURPLE + "#" + ANSI_RESET);}
+                            if (couleur2.equals("jaune")) {plateau[caseADetruireY][caseADetruireX] = (ANSI_YELLOW + "#" + ANSI_RESET);}
                         }
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
@@ -317,14 +316,14 @@ public class Main {
                         boolean numberX = Fonction.estUnNombre(caseToDestructXstring);
                         boolean numberY = Fonction.estUnNombre(caseToDestructYstring);
                         if(numberX && numberY){
-                            caseToDestructX = Integer.parseInt(caseToDestructXstring);
-                            caseToDestructY = Integer.parseInt(caseToDestructYstring);
+                            caseADetruireX = Integer.parseInt(caseToDestructXstring);
+                            caseADetruireY = Integer.parseInt(caseToDestructYstring);
                         }
-                        if (plateau[caseToDestructY][caseToDestructX].equals("[]")) {
-                            if (couleur3.equals("rouge")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_RED + "#" + ANSI_RESET);}
-                            if (couleur3.equals("bleu")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_BLUE + "#" + ANSI_RESET);}
-                            if (couleur3.equals("violet")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_PURPLE + "#" + ANSI_RESET);}
-                            if (couleur3.equals("jaune")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_YELLOW + "#" + ANSI_RESET);}
+                        if (plateau[caseADetruireY][caseADetruireX].equals("[]")) {
+                            if (couleur3.equals("rouge")) {plateau[caseADetruireY][caseADetruireX] = (ANSI_RED + "#" + ANSI_RESET);}
+                            if (couleur3.equals("bleu")) {plateau[caseADetruireY][caseADetruireX] = (ANSI_BLUE + "#" + ANSI_RESET);}
+                            if (couleur3.equals("violet")) {plateau[caseADetruireY][caseADetruireX] = (ANSI_PURPLE + "#" + ANSI_RESET);}
+                            if (couleur3.equals("jaune")) {plateau[caseADetruireY][caseADetruireX] = (ANSI_YELLOW + "#" + ANSI_RESET);}
                         }
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
@@ -367,14 +366,14 @@ public class Main {
                         boolean numberX = Fonction.estUnNombre(caseToDestructXstring);
                         boolean numberY = Fonction.estUnNombre(caseToDestructYstring);
                         if(numberX && numberY){
-                            caseToDestructX = Integer.parseInt(caseToDestructXstring);
-                            caseToDestructY = Integer.parseInt(caseToDestructYstring);
+                            caseADetruireX = Integer.parseInt(caseToDestructXstring);
+                            caseADetruireY = Integer.parseInt(caseToDestructYstring);
                         }
-                        if (plateau[caseToDestructY][caseToDestructX].equals("[]")) {
-                            if (couleur4.equals("rouge")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_RED + "#" + ANSI_RESET);}
-                            if (couleur4.equals("bleu")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_BLUE + "#" + ANSI_RESET);}
-                            if (couleur4.equals("violet")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_PURPLE + "#" + ANSI_RESET);}
-                            if (couleur4.equals("jaune")) {plateau[caseToDestructY][caseToDestructX] = (ANSI_YELLOW + "#" + ANSI_RESET);}
+                        if (plateau[caseADetruireY][caseADetruireX].equals("[]")) {
+                            if (couleur4.equals("rouge")) {plateau[caseADetruireY][caseADetruireX] = (ANSI_RED + "#" + ANSI_RESET);}
+                            if (couleur4.equals("bleu")) {plateau[caseADetruireY][caseADetruireX] = (ANSI_BLUE + "#" + ANSI_RESET);}
+                            if (couleur4.equals("violet")) {plateau[caseADetruireY][caseADetruireX] = (ANSI_PURPLE + "#" + ANSI_RESET);}
+                            if (couleur4.equals("jaune")) {plateau[caseADetruireY][caseADetruireX] = (ANSI_YELLOW + "#" + ANSI_RESET);}
                         }
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
@@ -385,7 +384,7 @@ public class Main {
                 joueur2EnVie = false;
                 joueur3EnVie = false;
                 joueur4EnVie = false;
-                startnew();
+                recommencer();
             }
             else { //Si l'utilisateur entre un mauvais chiffre pour le nombre de joueur, lui repose la question
                 System.out.println("J'ai dit entre 2 et 4 joueurs...");

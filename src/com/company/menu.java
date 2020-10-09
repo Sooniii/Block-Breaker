@@ -93,7 +93,7 @@ public class menu {
                 System.out.println("<3");
             }
             Thread.sleep(500);
-            Main.close();
+            Main.eteindre();
         }
         //Easter egg
         else if(choix.equals("easterEgg")){
