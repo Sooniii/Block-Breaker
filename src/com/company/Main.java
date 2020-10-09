@@ -170,8 +170,8 @@ public class Main {
                                 break;
                             }
                         }
-                        Fonction.flush(1);
-                        startnew();
+                         Fonction.flush(1);
+//                        startnew();
                     } //Premier joueur a jouer
                     if (!(player1Alive)) {tourJoueur += 1;}
                     if (player1Alive && plateau[joueur1Ligne][joueur1Colonne+1] != "[]" && plateau[joueur1Ligne][joueur1Colonne-1]!= "[]"
