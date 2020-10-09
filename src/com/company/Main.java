@@ -177,7 +177,7 @@ public class Main {
 //                        startnew();
                     }
                     if (playerAlive==1){break;}
-                    if (playerAlive==1){break;}//Premier joueur a jouer
+                    //Premier joueur a jouer
                     if (!(player1Alive)) {tourJoueur += 1;}
                     if (player1Alive && plateau[joueur1Ligne][joueur1Colonne+1] != "[]" && plateau[joueur1Ligne][joueur1Colonne-1]!= "[]"
                             && plateau[joueur1Ligne+1][joueur1Colonne]!= "[]" && plateau[joueur1Ligne-1][joueur1Colonne]!= "[]"){
