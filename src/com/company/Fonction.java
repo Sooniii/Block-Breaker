@@ -6,11 +6,10 @@ public class Fonction {
     public static String couleurs;
 
     /**
-     * Fonction pour sauter de ligne
-     * @param a Saut de ligne avec paramètre Int "a" reçu
+     * @param a Saut de ligne avec paramètre Entier "a" reçu
      */
     //Fonction pour sauter de ligne
-    public static void flush(int a) {
+    public static void sautDeLigne(int a) {
         for (int i = 0; i < a; i = i + 1) {
             System.out.println(" ");
         }
@@ -228,7 +227,7 @@ public class Fonction {
      */
     //Fonction qui affiche le plateau
     public static void afficherPlateau(String[][] plateau) {
-        flush(3);
+        sautDeLigne(3);
         for (int i = 0; i < plateau.length; i++) {
             for (int j = 0; j < plateau[0].length; j++) {
                 System.out.print(plateau[i][j] + "\t");
@@ -321,7 +320,7 @@ public class Fonction {
      * @param s Le String à vérifier
      * @return true ou false
      */
-    static boolean isNumber(String s)
+    static boolean estUnNombre(String s)
     {
         for (int i = 0; i < s.length(); i++)
             if (Character.isDigit(s.charAt(i)) == false)

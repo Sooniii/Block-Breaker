@@ -1,6 +1,5 @@
 package com.company;
 
-import java.util.Arrays;
 import java.util.Random;
 
 import java.util.Scanner;
@@ -47,7 +46,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        Fonction.flush(1);
+        Fonction.sautDeLigne(1);
         System.out.println("Bienvenue dans Block-Breaker :");
         menu.menu();
         while (true) {
@@ -69,10 +68,10 @@ public class Main {
             int joueur3Colonne = 0;
             int joueur4Ligne = 0;
             int joueur4Colonne = 0;
-            boolean player1Alive = true;
-            boolean player2Alive = true;
-            boolean player3Alive = true;
-            boolean player4Alive = true;
+            boolean joueur1EnVie = true;
+            boolean joueur2EnVie = true;
+            boolean joueur3EnVie = true;
+            boolean joueur4EnVie = true;
             String[][] plateau;
             Random rd = new Random();
             Scanner sc = new Scanner(System.in);
@@ -80,7 +79,7 @@ public class Main {
             String nombreJoueurString;
             int tourJoueur;
             boolean signalVictoire = true;
-            int playerAlive;
+            int joueurVivant;
             String bouton;
             String vainqueur = "null";
 
@@ -88,11 +87,11 @@ public class Main {
             //Choix du nombre de joueur
             System.out.print("Combien de joueurs ? Entre 2 et 4 : ");
             nombreJoueurString = sc.next();
-            boolean nombreJoueurboolean = Fonction.isNumber(nombreJoueurString);
+            boolean nombreJoueurboolean = Fonction.estUnNombre(nombreJoueurString);
             if(nombreJoueurboolean){
                 nombreJoueur = Integer.parseInt(nombreJoueurString);
             }
-            playerAlive = nombreJoueur;
+            joueurVivant = nombreJoueur;
 
 
 
@@ -157,14 +156,14 @@ public class Main {
                 //Boucle de jeu
                 while (signalVictoire) {
 
-                    if(playerAlive==1){ //Test de fin de partie
+                    if(joueurVivant==1){ //Test de fin de partie
                         signalVictoire = false;
                         System.out.println("##########################################################");
-                        Fonction.flush(2);
-                        if (player1Alive) {vainqueur = joueur1;}
-                        else if (player2Alive) {vainqueur = joueur2;}
-                        else if (player3Alive) {vainqueur = joueur3;}
-                        else if (player4Alive) {vainqueur = joueur4;}
+                        Fonction.sautDeLigne(2);
+                        if (joueur1EnVie) {vainqueur = joueur1;}
+                        else if (joueur2EnVie) {vainqueur = joueur2;}
+                        else if (joueur3EnVie) {vainqueur = joueur3;}
+                        else if (joueur4EnVie) {vainqueur = joueur4;}
                         System.out.println("La partie est finie ! Victoire de : " + vainqueur);
                         // Stockage des vainqueurs dans le tableau score
                         for (int i = 0; i < score.length; i++){
@@ -173,20 +172,20 @@ public class Main {
                                 break;
                             }
                         }
-                         Fonction.flush(1);
+                         Fonction.sautDeLigne(1);
 //                        startnew();
                     }
-                    if (playerAlive==1){break;}
+                    if (joueurVivant==1){break;}
                     //Premier joueur a jouer
-                    if (!(player1Alive)) {tourJoueur += 1;}
-                    if (player1Alive && plateau[joueur1Ligne][joueur1Colonne+1] != "[]" && plateau[joueur1Ligne][joueur1Colonne-1]!= "[]"
+                    if (!(joueur1EnVie)) {tourJoueur += 1;}
+                    if (joueur1EnVie && plateau[joueur1Ligne][joueur1Colonne+1] != "[]" && plateau[joueur1Ligne][joueur1Colonne-1]!= "[]"
                             && plateau[joueur1Ligne+1][joueur1Colonne]!= "[]" && plateau[joueur1Ligne-1][joueur1Colonne]!= "[]"){
                         System.out.println(joueur1 + " est éliminé");
-                        player1Alive = false;
-                        playerAlive -= 1;
+                        joueur1EnVie = false;
+                        joueurVivant -= 1;
                         tourJoueur += 1;
                     }
-                    if (tourJoueur % nombreJoueur == 0 && player1Alive) {
+                    if (tourJoueur % nombreJoueur == 0 && joueur1EnVie) {
                         System.out.print("C'est à " + joueur1 + " (" + couleur1 + ") de jouer, utilise z,q,s,d pour te déplacer : ");
                         bouton = sc.next();
 
@@ -215,8 +214,8 @@ public class Main {
                         System.out.println("Quelle case détruire (Vertical)");
                         Scanner tourY = new Scanner(System.in);
                         String caseToDestructYstring = tourY.next();
-                        boolean numberX = Fonction.isNumber(caseToDestructXstring);
-                        boolean numberY = Fonction.isNumber(caseToDestructYstring);
+                        boolean numberX = Fonction.estUnNombre(caseToDestructXstring);
+                        boolean numberY = Fonction.estUnNombre(caseToDestructYstring);
                         if(numberX && numberY){
                             caseToDestructX = Integer.parseInt(caseToDestructXstring);
                             caseToDestructY = Integer.parseInt(caseToDestructYstring);
@@ -230,15 +229,15 @@ public class Main {
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
                     }
-                    if (!(player2Alive)) {tourJoueur += 1;}
-                    if (player2Alive && plateau[joueur2Ligne][joueur2Colonne+1] != "[]" && plateau[joueur2Ligne][joueur2Colonne-1]!= "[]"
+                    if (!(joueur2EnVie)) {tourJoueur += 1;}
+                    if (joueur2EnVie && plateau[joueur2Ligne][joueur2Colonne+1] != "[]" && plateau[joueur2Ligne][joueur2Colonne-1]!= "[]"
                             && plateau[joueur2Ligne+1][joueur2Colonne]!= "[]" && plateau[joueur2Ligne-1][joueur2Colonne]!= "[]"){
                         System.out.println(joueur2 + " est éliminé");
-                        player2Alive = false;
-                        playerAlive -= 1;
+                        joueur2EnVie = false;
+                        joueurVivant -= 1;
                         tourJoueur += 1;
                     }
-                    if (tourJoueur % nombreJoueur == 1 && player2Alive){ //Deuxieme joueur a jouer
+                    if (tourJoueur % nombreJoueur == 1 && joueur2EnVie){ //Deuxieme joueur a jouer
                         System.out.print("C'est à " + joueur2 +  " (" + couleur2 + ") de jouer, utilise z,q,s,d pour te déplacer : ");
                         bouton = sc.next();
                         if (bouton.equals("z") && plateau[joueur2Ligne-1][joueur2Colonne].equals("[]")) {
@@ -265,8 +264,8 @@ public class Main {
                         System.out.println("Quelle case détruire (Ordonnée)");
                         Scanner tourY = new Scanner(System.in);
                         String caseToDestructYstring = tourY.next();
-                        boolean numberX = Fonction.isNumber(caseToDestructXstring);
-                        boolean numberY = Fonction.isNumber(caseToDestructYstring);
+                        boolean numberX = Fonction.estUnNombre(caseToDestructXstring);
+                        boolean numberY = Fonction.estUnNombre(caseToDestructYstring);
                         if(numberX && numberY){
                             caseToDestructX = Integer.parseInt(caseToDestructXstring);
                             caseToDestructY = Integer.parseInt(caseToDestructYstring);
@@ -280,15 +279,15 @@ public class Main {
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
                     }
-                    if (!(player3Alive)) {tourJoueur += 1;}
-                    if (player3Alive && (nombreJoueur >= 3) && plateau[joueur3Ligne][joueur3Colonne+1] != "[]" && plateau[joueur3Ligne][joueur3Colonne-1]!= "[]"
+                    if (!(joueur3EnVie)) {tourJoueur += 1;}
+                    if (joueur3EnVie && (nombreJoueur >= 3) && plateau[joueur3Ligne][joueur3Colonne+1] != "[]" && plateau[joueur3Ligne][joueur3Colonne-1]!= "[]"
                             && plateau[joueur3Ligne+1][joueur3Colonne]!= "[]" && plateau[joueur3Ligne-1][joueur3Colonne]!= "[]"){
                         System.out.println(joueur3 + " est éliminé");
-                        player3Alive = false;
-                        playerAlive -= 1;
+                        joueur3EnVie = false;
+                        joueurVivant -= 1;
                         tourJoueur += 1;
                     }
-                    if (tourJoueur % nombreJoueur == 2 && player3Alive){ //Troisieme joueur a jouer
+                    if (tourJoueur % nombreJoueur == 2 && joueur3EnVie){ //Troisieme joueur a jouer
                         System.out.print("C'est à " + joueur3 +  " (" + couleur3 + ") de jouer, utilise z,q,s,d pour te déplacer : ");
                         bouton = sc.next();
                         if (bouton.equals("z") && plateau[joueur3Ligne-1][joueur3Colonne].equals("[]")) {
@@ -315,8 +314,8 @@ public class Main {
                         System.out.println("Quelle case détruire (Ordonnée)");
                         Scanner tourY = new Scanner(System.in);
                         String caseToDestructYstring = tourY.next();
-                        boolean numberX = Fonction.isNumber(caseToDestructXstring);
-                        boolean numberY = Fonction.isNumber(caseToDestructYstring);
+                        boolean numberX = Fonction.estUnNombre(caseToDestructXstring);
+                        boolean numberY = Fonction.estUnNombre(caseToDestructYstring);
                         if(numberX && numberY){
                             caseToDestructX = Integer.parseInt(caseToDestructXstring);
                             caseToDestructY = Integer.parseInt(caseToDestructYstring);
@@ -330,15 +329,15 @@ public class Main {
                         Fonction.afficherPlateau(plateau);
                         tourJoueur += 1;
                     }
-                    if (!(player4Alive)) {tourJoueur += 1;}
-                    if (player4Alive && (nombreJoueur == 4) &&plateau[joueur4Ligne][joueur4Colonne+1] != "[]" && plateau[joueur4Ligne][joueur4Colonne-1]!= "[]"
+                    if (!(joueur4EnVie)) {tourJoueur += 1;}
+                    if (joueur4EnVie && (nombreJoueur == 4) &&plateau[joueur4Ligne][joueur4Colonne+1] != "[]" && plateau[joueur4Ligne][joueur4Colonne-1]!= "[]"
                             && plateau[joueur4Ligne+1][joueur4Colonne]!= "[]" && plateau[joueur4Ligne-1][joueur4Colonne]!= "[]"){
                         System.out.println(joueur4 + " est éliminé");
-                        player4Alive = false;
-                        playerAlive -= 1;
+                        joueur4EnVie = false;
+                        joueurVivant -= 1;
                         tourJoueur += 1;
                     }
-                    if (tourJoueur % nombreJoueur == 3 && player4Alive){ //Quatrieme joueur a jouer
+                    if (tourJoueur % nombreJoueur == 3 && joueur4EnVie){ //Quatrieme joueur a jouer
                         System.out.print("C'est à " + joueur4 +  " (" + couleur4 + ") de jouer, utilise z,q,s,d pour te déplacer : ");
                         bouton = sc.next();
                         if (bouton.equals("z") && plateau[joueur4Ligne-1][joueur4Colonne].equals("[]")) {
@@ -365,8 +364,8 @@ public class Main {
                         System.out.println("Quelle case détruire (Ordonnée)");
                         Scanner tourY = new Scanner(System.in);
                         String caseToDestructYstring = tourY.next();
-                        boolean numberX = Fonction.isNumber(caseToDestructXstring);
-                        boolean numberY = Fonction.isNumber(caseToDestructYstring);
+                        boolean numberX = Fonction.estUnNombre(caseToDestructXstring);
+                        boolean numberY = Fonction.estUnNombre(caseToDestructYstring);
                         if(numberX && numberY){
                             caseToDestructX = Integer.parseInt(caseToDestructXstring);
                             caseToDestructY = Integer.parseInt(caseToDestructYstring);
@@ -382,10 +381,10 @@ public class Main {
                     }
                 }
                 //Propose de relancer une partie
-                player1Alive = false;
-                player2Alive = false;
-                player3Alive = false;
-                player4Alive = false;
+                joueur1EnVie = false;
+                joueur2EnVie = false;
+                joueur3EnVie = false;
+                joueur4EnVie = false;
                 startnew();
             }
             else { //Si l'utilisateur entre un mauvais chiffre pour le nombre de joueur, lui repose la question

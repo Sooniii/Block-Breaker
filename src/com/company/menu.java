@@ -6,28 +6,28 @@ public class menu {
      * @throws InterruptedException si l'utilisateur marque "o" la fonction renvois au menu, sinon, le terminale affiche "ERREUR" et relance cette fonction
      */
     //Fonction retour au menu
-    public static void returntomenu() throws InterruptedException {
-        Scanner exit = new Scanner(System.in);
+    public static void retourAuMenu() throws InterruptedException {
+        Scanner quitterscaner = new Scanner(System.in);
         System.out.println("\n Retour au menu [o]");
-        String Exit = exit.next();
-        if(Exit.equals("o")) {
-            Fonction.flush(15);
+        String quitter = quitterscaner.next();
+        if(quitter.equals("o")) {
+            Fonction.sautDeLigne(15);
             menu();
         }
         else{
             System.out.println("ERREUR");
-            returntomenu();
+            retourAuMenu();
         }
     }
 
 
     /**
      * Fonction qui affiche le menu
-     * @throws InterruptedException Permet de faire Thread.sleep
+     * @throws InterruptedException Permet de faire attendre le programme
      */
     public static void menu() throws InterruptedException {
         //Introduction
-        Fonction.flush(1);
+        Fonction.sautDeLigne(1);
         System.out.print("   - Lancer le jeu [1] \n");
         System.out.print("   - Règles [2]\n ");
         System.out.print("  - Scores [3] \n");
@@ -69,7 +69,7 @@ public class menu {
             System.out.print("verticalement son pion dans la matrice, puis\n");
             System.out.print("sélectionne une case à détruire.\n");
             // Retour au menu ?
-            returntomenu();
+            retourAuMenu();
         }
 
 //         Afficher les scores des dernieres parties
@@ -79,14 +79,14 @@ public class menu {
                 System.out.println(Main.score[i]);      // on affiche le tableau
             }
 
-            returntomenu();
+            retourAuMenu();
             }
         /**
          * Si l'utilisateur marque "4" le jeu s'eteint
          */
         //Quitter le jeu
         else if(choix.equals("4")){
-            Fonction.flush(20);
+            Fonction.sautDeLigne(20);
             System.out.println("Merci d'avoir joué");
             for(int i = 0; i < 3; i=i+1){
                 Thread.sleep(300);
@@ -130,9 +130,9 @@ public class menu {
         }
         //Si le caractère indiqué n'est pas valide
         else{
-            Fonction.flush(10);
+            Fonction.sautDeLigne(10);
             System.out.println("Veuillez indiquer un caractère valide");
-            Fonction.flush(2);
+            Fonction.sautDeLigne(2);
             menu();
         }
         return;
