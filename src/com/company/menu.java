@@ -52,7 +52,7 @@ public class menu {
             System.out.print("- Si le joueur ne peut plus bouger, il a perdu\n \n");
             System.out.print( "Contraintes :\n");
             System.out.print( "- Un joueur ne peut pas détruire une case occupée.\n");
-            System.out.print("- Un joueur ne peut pas occuper une case détruite ou une case déjà occupée. \n \n");
+            System.out.print("- Un joueur ne peut pas occuper une case détruite ou une case déjà occupée. \n");
             System.out.print("- Un joueur peut ne pas se déplacer mais il pourra quand même détruire une case\n");
             System.out.print("GUIDE :\n");
             System.out.print("\n Menu :\n");
