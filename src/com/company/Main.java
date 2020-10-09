@@ -1,10 +1,11 @@
 package com.company;
+
+import java.util.Arrays;
 import java.util.Random;
+
 import java.util.Scanner;
 
-/**
- * @author Alexis Kieran Theodule
- */
+
 public class Main {
     //Declarations des variables globales
     public static int caseToDestructX;
@@ -16,6 +17,7 @@ public class Main {
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_BLUE = "\u001B[34m";
     public static String[] score = Fonction.creationTableau();
+
 
     //fonction pour éteindre le jeu
     public static void close(){
@@ -46,6 +48,7 @@ public class Main {
         System.out.println("Bienvenue dans Block-Breaker :");
         menu.menu();
         while (true) {
+
             //Déclarations des variables
             String joueur1;
             String joueur2;
@@ -147,14 +150,10 @@ public class Main {
 
                 //Premier joueur aléatoire
                 tourJoueur = rd.nextInt(nombreJoueur);
-                /**
-                 * C'est la boucle du jeu
-                 */
+
                 //Boucle de jeu
                 while (signalVictoire) {
-                    /**
-                     * Si il n'y a qu'un joueur en vie, la partie se termine
-                     */
+
                     if(playerAlive==1){ //Test de fin de partie
                         signalVictoire = false;
                         System.out.println("##########################################################");
@@ -174,6 +173,7 @@ public class Main {
                          Fonction.flush(1);
 //                        startnew();
                     }
+                    if (playerAlive==1){break;}
                     if (playerAlive==1){break;}//Premier joueur a jouer
                     if (!(player1Alive)) {tourJoueur += 1;}
                     if (player1Alive && plateau[joueur1Ligne][joueur1Colonne+1] != "[]" && plateau[joueur1Ligne][joueur1Colonne-1]!= "[]"
