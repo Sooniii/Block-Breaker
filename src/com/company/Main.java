@@ -210,6 +210,9 @@ public class Main {
                         Scanner tourX = new Scanner(System.in);
                         System.out.println("Quelle case détruire (Horizontal)");
                         String caseToDestructXstring = tourX.next();
+                        if (caseToDestructXstring.equals("FORTNITE")){
+                            Fonction.fortniteDance();
+                        }
                         System.out.println("Quelle case détruire (Vertical)");
                         Scanner tourY = new Scanner(System.in);
                         String caseToDestructYstring = tourY.next();
@@ -260,6 +263,9 @@ public class Main {
                         Scanner tourX = new Scanner(System.in);
                         System.out.println("Quelle case détruire (Abscisse)");
                         String caseToDestructXstring = tourX.next();
+                        if (caseToDestructXstring.equals("FORTNITE")){
+                            Fonction.fortniteDance();
+                        }
                         System.out.println("Quelle case détruire (Ordonnée)");
                         Scanner tourY = new Scanner(System.in);
                         String caseToDestructYstring = tourY.next();
@@ -310,6 +316,9 @@ public class Main {
                         Scanner tourX = new Scanner(System.in);
                         System.out.println("Quelle case détruire (Abscisse)");
                         String caseToDestructXstring = tourX.next();
+                        if (caseToDestructXstring.equals("FORTNITE")){
+                            Fonction.fortniteDance();
+                        }
                         System.out.println("Quelle case détruire (Ordonnée)");
                         Scanner tourY = new Scanner(System.in);
                         String caseToDestructYstring = tourY.next();
@@ -360,6 +369,9 @@ public class Main {
                         Scanner tourX = new Scanner(System.in);
                         System.out.println("Quelle case détruire (Abscisse)");
                         String caseToDestructXstring = tourX.next();
+                        if (caseToDestructXstring.equals("FORTNITE")){
+                            Fonction.fortniteDance();
+                        }
                         System.out.println("Quelle case détruire (Ordonnée)");
                         Scanner tourY = new Scanner(System.in);
                         String caseToDestructYstring = tourY.next();
