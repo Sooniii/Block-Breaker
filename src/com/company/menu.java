@@ -19,8 +19,6 @@ public class menu {
             returntomenu();
         }
     }
-    public static void afficherScore(){
-    }
 
     /**
      * Fonction qui affiche le menu
@@ -40,7 +38,6 @@ public class menu {
          */
         //Lancer le jeu
         if( choix.equals("1")){
-            // System.out.println("Ecriver le nombres de joueurs participants");
         }
         /**
          * Si l'utilisateur marque "2" les règles s'affichent
@@ -56,6 +53,7 @@ public class menu {
             System.out.print( "Contraintes :\n");
             System.out.print( "- Un joueur ne peut pas détruire une case occupée.\n");
             System.out.print("- Un joueur ne peut pas occuper une case détruite ou une case déjà occupée. \n \n");
+            System.out.print("- Un joueur peut ne pas se déplacer mais il pourra quand même détruire une case\n");
             System.out.print("GUIDE :\n");
             System.out.print("\n Menu :\n");
             System.out.print("- Lancer le jeu : Permet de démarrer une partie\n");
