@@ -1,5 +1,8 @@
 package com.company;
+
 import java.util.Scanner;
+import java.util.SortedMap;
+
 public class menu {
     /**
      * Fonction qui permet d'afficher si l'utilisateur veut revenir au menu
@@ -39,6 +42,7 @@ public class menu {
          */
         //Lancer le jeu
         if( choix.equals("1")){
+            // System.out.println("Ecriver le nombres de joueurs participants");
         }
         /**
          * Si l'utilisateur marque "2" les règles s'affichent
@@ -50,7 +54,8 @@ public class menu {
             System.out.print("- Pendant son tour un joueur peut déplacer son pion d’une case verticalement ou\n");
             System.out.print("horizontalement\n");
             System.out.print("- Après s'être déplacé, le joueur détruit une case du plateau.\n");
-            System.out.print("- Si le joueur ne peut plus bouger, il a perdu\n \n");
+            System.out.print("- Si le joueur ne peut plus bouger, il a perdu\n ");
+            System.out.print("- Un joueur lors de son tour peut quitter la partie en marquant 'retour' \n \n");
             System.out.print( "Contraintes :\n");
             System.out.print( "- Un joueur ne peut pas détruire une case occupée.\n");
             System.out.print("- Un joueur ne peut pas occuper une case détruite ou une case déjà occupée. \n");
@@ -95,6 +100,9 @@ public class menu {
             Thread.sleep(500);
             Main.eteindre();
         }
+        /**
+         * Si l'utilisateur marque "easterEgg" un secret se déclanche puis retourne au menu
+         */
         //Easter egg
         else if(choix.equals("easterEgg")){
             System.out.println("\n" +
@@ -128,6 +136,9 @@ public class menu {
                     "                                                                  \\______/                                         \n");
             menu();
         }
+        /**
+         * Si le caractère indiqué n'est pas valide un message d'erreur s'affiche puis retourne au menu
+         */
         //Si le caractère indiqué n'est pas valide
         else{
             Fonction.sautDeLigne(10);

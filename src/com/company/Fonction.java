@@ -315,6 +315,7 @@ public class Fonction {
         if (color.equals("jaune")) {plateau[x][y] = (ANSI_YELLOW + player + ANSI_RESET);}
 
     }
+
     /**
      * Fonction qui vérifie si un String est un Int ou non
      * @param s Le String à vérifier
