@@ -401,10 +401,6 @@ public class Main {
                     }
                 }
                 //Propose de relancer une partie
-                joueur1EnVie = false;
-                joueur2EnVie = false;
-                joueur3EnVie = false;
-                joueur4EnVie = false;
                 recommencer();
             }
             else { //Si l'utilisateur entre un mauvais chiffre pour le nombre de joueur, lui repose la question
