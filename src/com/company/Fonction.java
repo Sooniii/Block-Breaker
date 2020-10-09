@@ -16,6 +16,9 @@ public class Fonction {
         }
     }
 
+    /**
+     * @return le Pseudo chosi par l'utilisateur
+     */
     //Fonction pour choisir les pseudo
     public static String choisirPseudo() {
 
@@ -39,6 +42,10 @@ public class Fonction {
         } return tabResultat;
     }
 
+    /**
+     * @param joueur
+     * @return
+     */
     // Choisir la couleur
     public static String choisirCouleur(String joueur) {
         Scanner sc = new Scanner(System.in);
@@ -55,6 +62,13 @@ public class Fonction {
         return couleurs;
     }
 
+    /**
+     * @param joueur1
+     * @param couleur1
+     * @param joueur2
+     * @param couleur2
+     * @return
+     */
     //Fonction pour lancer la partie a 2 joueurs
     public static String[][] lancerPartie(String joueur1, String couleur1, String joueur2, String couleur2) {
 
@@ -91,6 +105,15 @@ public class Fonction {
         return plateau;
     }
 
+    /**
+     * @param joueur1
+     * @param couleur1
+     * @param joueur2
+     * @param couleur2
+     * @param joueur3
+     * @param couleur3
+     * @return
+     */
     //Fonction pour lancer la partie a 3 joueurs
     public static String[][] lancerPartie(String joueur1, String couleur1, String joueur2, String couleur2, String joueur3, String couleur3) {
 
@@ -134,6 +157,17 @@ public class Fonction {
         return plateau;
     }
 
+    /**
+     * @param joueur1
+     * @param couleur1
+     * @param joueur2
+     * @param couleur2
+     * @param joueur3
+     * @param couleur3
+     * @param joueur4
+     * @param couleur4
+     * @return
+     */
     //Fonction pour lancer la partie a 4 joueurs
     public static String[][] lancerPartie(String joueur1, String couleur1, String joueur2, String couleur2, String joueur3, String couleur3, String joueur4, String couleur4) {
 
@@ -184,6 +218,10 @@ public class Fonction {
         return plateau;
     }
 
+    /**
+     * @param plateau la matrice de jeu
+     * //Permet d'afficher la matrice
+     */
     //Fonction qui affiche le plateau
     public static void afficherPlateau(String[][] plateau) {
         flush(3);
@@ -195,6 +233,13 @@ public class Fonction {
         }
     }
 
+    /**
+     * @param plateau
+     * @param x
+     * @param y
+     * @param player
+     * @param color
+     */
     //Fonction pour bouger vers la gauche
     public static void bougeGauche(String[][] plateau, int x, int y, String player, String color) {
         plateau[x][y] = "[]";
@@ -206,6 +251,14 @@ public class Fonction {
         if (color.equals("jaune")) {plateau[x][y] = (ANSI_YELLOW + player + ANSI_RESET);}
 
     }
+
+    /**
+     * @param plateau
+     * @param x
+     * @param y
+     * @param player
+     * @param color
+     */
     //Fonction pour bouger vers la droite
     public static void bougeDroite(String[][] plateau, int x, int y, String player, String color) {
         plateau[x][y] = "[]";
@@ -217,6 +270,14 @@ public class Fonction {
         if (color.equals("jaune")) {plateau[x][y] = (ANSI_YELLOW + player + ANSI_RESET);}
 
     }
+
+    /**
+     * @param plateau
+     * @param x
+     * @param y
+     * @param player
+     * @param color
+     */
     //Fonction pour bouger vers le haut
     public static void bougeHaut(String[][] plateau, int x, int y, String player, String color) {
         plateau[x][y] = "[]";
@@ -228,6 +289,14 @@ public class Fonction {
         if (color.equals("jaune")) {plateau[x][y] = (ANSI_YELLOW + player + ANSI_RESET);}
 
     }
+
+    /**
+     * @param plateau
+     * @param x
+     * @param y
+     * @param player
+     * @param color
+     */
     //Fonction pour bouger vers le bas
     public static void bougeBas(String[][] plateau, int x, int y, String player, String color) {
         plateau[x][y] = "[]";
@@ -239,7 +308,6 @@ public class Fonction {
         if (color.equals("jaune")) {plateau[x][y] = (ANSI_YELLOW + player + ANSI_RESET);}
 
     }
-
     /**
      * Fonction qui vérifie si un String est un Int ou non
      * @param s Le String à vérifier
@@ -253,6 +321,4 @@ public class Fonction {
 
         return true;
     }
-
-
 }
