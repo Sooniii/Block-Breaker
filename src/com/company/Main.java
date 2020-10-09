@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Arrays;
 import java.util.Random;
 
 import java.util.Scanner;
@@ -203,6 +204,8 @@ public class Main {
                         if (bouton.equals("d") && plateau[joueur1Ligne][joueur1Colonne+1].equals("[]")) {
                             Fonction.bougeDroite(plateau, joueur1Ligne, joueur1Colonne, joueur1, couleur1);
                             joueur1Colonne += 1;
+                        }if(bouton.equals("retour")){
+                            menu.menu();
                         }
 
                         Fonction.afficherPlateau(plateau);
@@ -254,6 +257,8 @@ public class Main {
                         if (bouton.equals("d") && plateau[joueur2Ligne][joueur2Colonne+1].equals("[]")) {
                             Fonction.bougeDroite(plateau, joueur2Ligne, joueur2Colonne, joueur2, couleur2);
                             joueur2Colonne += 1;
+                        }if(bouton.equals("retour")){
+                            menu.menu();
                         }
                         Fonction.afficherPlateau(plateau);
                         //Détruire une case
@@ -304,6 +309,8 @@ public class Main {
                         if (bouton.equals("d") && plateau[joueur3Ligne][joueur3Colonne+1].equals("[]")) {
                             Fonction.bougeDroite(plateau, joueur3Ligne, joueur3Colonne, joueur3, couleur3);
                             joueur3Colonne += 1;
+                        }if(bouton.equals("retour")){
+                            menu.menu();
                         }
                         Fonction.afficherPlateau(plateau);
                         //Détruire une case
@@ -354,6 +361,8 @@ public class Main {
                         if (bouton.equals("d") && plateau[joueur4Ligne][joueur4Colonne+1].equals("[]")) {
                             Fonction.bougeDroite(plateau, joueur4Ligne, joueur4Colonne, joueur4, couleur4);
                             joueur4Colonne += 1;
+                        }if(bouton.equals("retour")){
+                            menu.menu();
                         }
                         Fonction.afficherPlateau(plateau);
                         //Détruire une case
