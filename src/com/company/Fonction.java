@@ -43,8 +43,9 @@ public class Fonction {
     }
 
     /**
-     * @param joueur
-     * @return
+     * Fonction pour affecter une couleur au joueur
+     * @param joueur Joueur qui sera affecté par la couleur
+     * @return La couleur choisi par l'utilisateur
      */
     // Choisir la couleur
     public static String choisirCouleur(String joueur) {
@@ -63,11 +64,12 @@ public class Fonction {
     }
 
     /**
+     * Lance une partie a deux joueurs
      * @param joueur1
      * @param couleur1
      * @param joueur2
      * @param couleur2
-     * @return
+     * @return Le plateau de jeu avec les deux joueurs placés
      */
     //Fonction pour lancer la partie a 2 joueurs
     public static String[][] lancerPartie(String joueur1, String couleur1, String joueur2, String couleur2) {
@@ -106,13 +108,14 @@ public class Fonction {
     }
 
     /**
+     * Lance une partie avec trois joueurs
      * @param joueur1
      * @param couleur1
      * @param joueur2
      * @param couleur2
      * @param joueur3
      * @param couleur3
-     * @return
+     * @return Le plateau avec les trois joueurs placé
      */
     //Fonction pour lancer la partie a 3 joueurs
     public static String[][] lancerPartie(String joueur1, String couleur1, String joueur2, String couleur2, String joueur3, String couleur3) {
@@ -158,6 +161,7 @@ public class Fonction {
     }
 
     /**
+     * Lance une partie avec 4 joueurs
      * @param joueur1
      * @param couleur1
      * @param joueur2
@@ -166,7 +170,7 @@ public class Fonction {
      * @param couleur3
      * @param joueur4
      * @param couleur4
-     * @return
+     * @return Le plateau avec les 4 joueurs placé
      */
     //Fonction pour lancer la partie a 4 joueurs
     public static String[][] lancerPartie(String joueur1, String couleur1, String joueur2, String couleur2, String joueur3, String couleur3, String joueur4, String couleur4) {
@@ -234,6 +238,7 @@ public class Fonction {
     }
 
     /**
+     * Permet de se déplacer vers la gauche
      * @param plateau
      * @param x
      * @param y
@@ -253,6 +258,7 @@ public class Fonction {
     }
 
     /**
+     * Permet de se déplacer vers la droite
      * @param plateau
      * @param x
      * @param y
@@ -272,6 +278,7 @@ public class Fonction {
     }
 
     /**
+     * Permet de se déplacer vers le haut
      * @param plateau
      * @param x
      * @param y
@@ -291,6 +298,7 @@ public class Fonction {
     }
 
     /**
+     * Permet de se déplacer vers le bas
      * @param plateau
      * @param x
      * @param y

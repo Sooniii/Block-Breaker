@@ -22,8 +22,7 @@ public class menu {
             returntomenu();
         }
     }
-    public static void afficherScore(){
-    }
+
     public static void menu() throws InterruptedException {
         //Introduction
         Fonction.flush(1);
